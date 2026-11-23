@@ -1,0 +1,82 @@
+/* ── ORTAK MODÜL KONTROLLERİ: Apple Pro Özel Onay Kutusu, Tablo Küçük Görselleri & Boş Durum (<= 350 Satır) ── */
+
+.mod-check-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--os-text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.mod-check-label:hover {
+  color: var(--os-text-primary);
+}
+
+:is(.mod-check-label, .xl-stu-principal-check) input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  margin: 0;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  border-radius: 4.5px;
+  border: 1px solid var(--os-line);
+  background: var(--os-surface-subtle);
+  cursor: pointer;
+  transition: background-color 0.14s ease, border-color 0.14s ease, box-shadow 0.14s ease;
+}
+
+:is(.mod-check-label, .xl-stu-principal-check) input[type='checkbox']:hover {
+  border-color: var(--os-text-secondary);
+}
+
+:is(.mod-check-label, .xl-stu-principal-check) input[type='checkbox']:checked {
+  background: var(--os-check-bg);
+  border-color: var(--os-check-bg);
+}
+
+:is(.mod-check-label, .xl-stu-principal-check) input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  left: 4.3px;
+  top: 1.5px;
+  width: 3.6px;
+  height: 7.4px;
+  border: solid #ffffff;
+  border-width: 0 1.8px 1.8px 0;
+  transform: rotate(43deg);
+}
+
+:is(.mod-check-label, .xl-stu-principal-check) input[type='checkbox']:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--os-accent-soft);
+  border-color: var(--os-accent-border);
+}
+
+.mod-student-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mod-mini-thumb {
+  width: 28px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.mod-empty-banner {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--os-card-bg);
+  border: 1px solid var(--os-card-border);
+  font-size: 14.5px;
+  color: var(--os-text-secondary);
+}

@@ -1,0 +1,213 @@
+/* ── MarbleOS — Göz Yormayan Antrasit (Dark), Alabaster Porselen (Light) ve Apple Pro Tema Değişkenleri ── */
+
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --os-bg-stage: #131418;
+  --os-topbar-bg: rgba(24, 26, 32, 0.86);
+  --os-topbar-border: rgba(255, 255, 255, 0.08);
+  --os-topbar-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+  --os-text-primary: #f1f3f6;
+  --os-text-secondary: #b6bcc8;
+  --os-text-muted: #8e95a5;
+  --os-brand-marble: #f0f2f5;
+  --os-brand-studio: #c7cbd4;
+  --os-win-bg: rgba(20, 22, 29, 0.7);
+  --os-win-content-bg: rgba(19, 21, 27, 0.24);
+  --os-win-titlebar-bg: rgba(26, 29, 36, 0.48);
+  --os-win-border: rgba(255, 255, 255, 0.085);
+  --os-win-active-border: rgba(255, 255, 255, 0.14);
+  --os-win-shadow: 0 28px 72px rgba(0, 0, 0, 0.62), 0 0 0 0.5px rgba(255, 255, 255, 0.09);
+  --os-sheet-bg: rgba(20, 22, 29, 0.66);
+  --os-sheet-backdrop: transparent;
+  --os-popover-bg: rgba(22, 24, 31, 0.72);
+  --os-card-bg: rgba(255, 255, 255, 0.042);
+  --os-card-border: rgba(255, 255, 255, 0.055);
+  --os-surface-subtle: rgba(255, 255, 255, 0.032);
+  --os-inspector-card-border: rgba(255, 255, 255, 0.055);
+  --os-inspector-btn-bg: rgba(255, 255, 255, 0.075);
+  --os-inspector-btn-border: rgba(255, 255, 255, 0.065);
+  --os-inspector-btn-hover: rgba(255, 255, 255, 0.13);
+  --os-line: rgba(255, 255, 255, 0.085);
+  --os-danger: #f43f5e;
+  --os-dock-bg: rgba(24, 26, 32, 0.84);
+  --os-dock-border: rgba(255, 255, 255, 0.085);
+  --os-tooltip-bg: rgba(24, 26, 33, 0.78);
+  --os-tooltip-text: #eef0f3;
+  --os-tooltip-shadow: 0 18px 44px rgba(0, 0, 0, 0.52);
+  --os-chip-bg: rgba(255, 255, 255, 0.065);
+  --os-segment-bg: rgba(255, 255, 255, 0.045);
+  --os-segment-pill-bg: rgba(255, 255, 255, 0.13);
+  --os-select-bg: rgba(255, 255, 255, 0.05);
+  --os-btn-primary-bg: #e8eaed;
+  --os-btn-primary-text: #15171c;
+  --os-table-bg: #0c0d11;
+  --os-table-glass-bg: rgba(255, 255, 255, 0.038);
+  --os-table-head-bg: rgba(255, 255, 255, 0.055);
+  --os-table-sticky-bg: rgba(20, 22, 29, 0.64);
+  --os-table-text: #eef0f4;
+  --os-table-grid: rgba(255, 255, 255, 0.06);
+  --os-table-hover: rgba(255, 255, 255, 0.045);
+  --os-accent: #38bdf8;
+  --os-accent-soft: rgba(56, 189, 248, 0.14);
+  --os-accent-border: rgba(56, 189, 248, 0.44);
+  --os-check-bg: #2563eb;
+  --os-scrollbar-thumb: rgba(180, 188, 204, 0.36);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --os-bg-stage: #e4e2dc;
+  --os-topbar-bg: rgba(244, 243, 239, 0.88);
+  --os-topbar-border: rgba(24, 26, 32, 0.08);
+  --os-topbar-shadow: 0 14px 34px rgba(24, 26, 32, 0.1);
+  --os-text-primary: #15171b;
+  --os-text-secondary: #3b4049;
+  --os-text-muted: #5a606b;
+  --os-brand-marble: #1c1e22;
+  --os-brand-studio: #434851;
+  --os-win-bg: rgba(243, 242, 238, 0.74);
+  --os-win-content-bg: rgba(240, 239, 235, 0.24);
+  --os-win-titlebar-bg: rgba(233, 231, 225, 0.52);
+  --os-win-border: rgba(24, 26, 32, 0.095);
+  --os-win-active-border: rgba(24, 26, 32, 0.16);
+  --os-win-shadow: 0 24px 58px rgba(24, 26, 32, 0.15), 0 0 0 0.5px rgba(24, 26, 32, 0.1);
+  --os-sheet-bg: rgba(244, 243, 239, 0.76);
+  --os-sheet-backdrop: transparent;
+  --os-popover-bg: rgba(248, 247, 243, 0.8);
+  --os-card-bg: rgba(255, 255, 255, 0.44);
+  --os-card-border: rgba(24, 26, 32, 0.06);
+  --os-surface-subtle: rgba(255, 255, 255, 0.34);
+  --os-inspector-card-border: rgba(24, 26, 32, 0.065);
+  --os-inspector-btn-bg: rgba(24, 26, 32, 0.06);
+  --os-inspector-btn-border: rgba(24, 26, 32, 0.065);
+  --os-inspector-btn-hover: rgba(24, 26, 32, 0.11);
+  --os-line: rgba(24, 26, 32, 0.09);
+  --os-danger: #e11d48;
+  --os-dock-bg: rgba(244, 243, 239, 0.86);
+  --os-dock-border: rgba(24, 26, 32, 0.09);
+  --os-tooltip-bg: rgba(248, 247, 243, 0.84);
+  --os-tooltip-text: #1c1e22;
+  --os-tooltip-shadow: 0 14px 32px rgba(24, 26, 32, 0.15);
+  --os-chip-bg: rgba(24, 26, 32, 0.06);
+  --os-segment-bg: rgba(24, 26, 32, 0.055);
+  --os-segment-pill-bg: rgba(255, 255, 255, 0.88);
+  --os-select-bg: rgba(255, 255, 255, 0.62);
+  --os-btn-primary-bg: #1e2026;
+  --os-btn-primary-text: #f5f4f0;
+  --os-table-bg: #f5f4f0;
+  --os-table-glass-bg: rgba(255, 255, 255, 0.44);
+  --os-table-head-bg: rgba(255, 255, 255, 0.56);
+  --os-table-sticky-bg: rgba(244, 243, 239, 0.82);
+  --os-table-text: #15171b;
+  --os-table-grid: rgba(24, 26, 32, 0.07);
+  --os-table-hover: rgba(24, 26, 32, 0.04);
+  --os-accent: #0284c7;
+  --os-accent-soft: rgba(2, 132, 199, 0.11);
+  --os-accent-border: rgba(2, 132, 199, 0.4);
+  --os-check-bg: #0284c7;
+  --os-scrollbar-thumb: rgba(51, 65, 85, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+input,
+textarea,
+[contenteditable='true'] {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+img,
+svg,
+a,
+button {
+  -webkit-user-drag: none;
+}
+
+*::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-track:vertical {
+  margin-block: 8px;
+}
+
+*::-webkit-scrollbar-track:horizontal {
+  margin-inline: 8px;
+}
+
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 999px;
+}
+
+[data-scroll-active]::-webkit-scrollbar-thumb,
+*:focus-visible::-webkit-scrollbar-thumb {
+  background: var(--os-scrollbar-thumb);
+}
+
+*::-webkit-scrollbar-thumb:active,
+*::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--os-scrollbar-thumb), var(--os-text-muted) 34%);
+}
+
+@media (forced-colors: active) {
+  *::-webkit-scrollbar-thumb {
+    background: ButtonText;
+  }
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: var(--os-text-primary);
+  background: var(--os-bg-stage);
+  user-select: none;
+}
+
+:is(.os-sheet-btn-primary,
+  .xl-btn-primary,
+  .mod-action-btn,
+  .os-book-action-btn.is-primary,
+  .xl-quick-submit,
+  .xl-capsule-submit) .os-label-icon :is(path, circle, rect) {
+  stroke: currentColor;
+  fill: none;
+}
+
+.os-sheet-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}

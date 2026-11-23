@@ -1,0 +1,197 @@
+import type { StudioDatabaseSnapshot } from '../../src/system/sqlite/types';
+
+/**
+ * Otomatik testler için PNG base64 portre verisi üretir (uygulama açılışında import edilmez).
+ */
+const BASE_TEST_PNG =
+  'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=';
+
+export function createStudioPortraitDataUrl(
+  _initials: string,
+  _studentNo: string,
+  _bgStart: string,
+  _bgEnd: string,
+): string {
+  return `data:image/png;base64,${BASE_TEST_PNG}`;
+}
+
+export const INITIAL_STUDIO_SEED: StudioDatabaseSnapshot = {
+  schools: [
+    {
+      id: 'sch-1',
+      code: '00001',
+      institutionCode: '000123',
+      name: 'Atatürk Anadolu Lisesi',
+      address: '',
+      notes: '',
+      makeBiometric: false,
+      makeVesikalik: true,
+      logoDataUrl: '',
+      transparentLogoOpacity: 35,
+      principalSignatureDataUrl: '',
+      deputySignatureDataUrl: '',
+      schoolPhotoDataUrl: '',
+      schoolPhotoZoom: 1,
+      createdAt: '2026-11-04T17:55:00Z',
+      updatedAt: '2026-11-04T17:55:00Z',
+    },
+  ],
+  activeSchoolId: 'sch-1',
+  classes: [
+    {
+      id: 'cls-9a',
+      schoolId: 'sch-1',
+      academicYear: '2026–2027',
+      name: '9-A',
+      teacherName: 'Ayşe Yılmaz',
+      createdAt: '2026-11-04T18:00:00Z',
+    },
+    {
+      id: 'cls-10b',
+      schoolId: 'sch-1',
+      academicYear: '2026–2027',
+      name: '10-B',
+      teacherName: 'Mehmet Kaya',
+      createdAt: '2026-11-04T18:05:00Z',
+    },
+    {
+      id: 'cls-12c',
+      schoolId: 'sch-1',
+      academicYear: '2026–2027',
+      name: '12-C',
+      teacherName: 'Zeynep Demir',
+      createdAt: '2026-11-04T18:10:00Z',
+    },
+  ],
+  students: [
+    {
+      id: 'stu-104',
+      classId: 'cls-9a',
+      studentNumber: '104',
+      firstName: 'Elif',
+      lastName: 'Aksoy',
+      matchedPhotoId: 'ph-104',
+      printReady: true,
+      updatedAt: '2026-11-04T18:15:00Z',
+    },
+    {
+      id: 'stu-108',
+      classId: 'cls-9a',
+      studentNumber: '108',
+      firstName: 'Caner',
+      lastName: 'Öztürk',
+      matchedPhotoId: 'ph-108',
+      printReady: true,
+      updatedAt: '2026-11-04T18:16:00Z',
+    },
+    {
+      id: 'stu-112',
+      classId: 'cls-9a',
+      studentNumber: '112',
+      firstName: 'Defne',
+      lastName: 'Yıldız',
+      matchedPhotoId: 'ph-112',
+      printReady: false,
+      updatedAt: '2026-11-04T18:17:00Z',
+    },
+    {
+      id: 'stu-119',
+      classId: 'cls-9a',
+      studentNumber: '119',
+      firstName: 'Mert',
+      lastName: 'Çelik',
+      matchedPhotoId: null,
+      printReady: false,
+      updatedAt: '2026-11-04T18:18:00Z',
+    },
+    {
+      id: 'stu-205',
+      classId: 'cls-10b',
+      studentNumber: '205',
+      firstName: 'Selin',
+      lastName: 'Arslan',
+      matchedPhotoId: 'ph-205',
+      printReady: true,
+      updatedAt: '2026-11-04T18:20:00Z',
+    },
+    {
+      id: 'stu-301',
+      classId: 'cls-12c',
+      studentNumber: '301',
+      firstName: 'Kerem',
+      lastName: 'Şahin',
+      matchedPhotoId: 'ph-301',
+      printReady: true,
+      updatedAt: '2026-11-04T18:22:00Z',
+    },
+  ],
+  photos: [
+    {
+      id: 'ph-104',
+      fileName: '104_Elif_Aksoy.jpg',
+      dataUrl: createStudioPortraitDataUrl('EA', '104', '#3f3f46', '#18181b'),
+      studentId: 'stu-104',
+      adjustments: { zoom: 1, brightness: 102, contrast: 104, warmth: 0 },
+      approvedForPrint: true,
+      createdAt: '2026-11-04T18:15:00Z',
+    },
+    {
+      id: 'ph-108',
+      fileName: '108_Caner_Ozturk.jpg',
+      dataUrl: createStudioPortraitDataUrl('CÖ', '108', '#047857', '#022c22'),
+      studentId: 'stu-108',
+      adjustments: { zoom: 1.05, brightness: 100, contrast: 102, warmth: 0 },
+      approvedForPrint: true,
+      createdAt: '2026-11-04T18:16:00Z',
+    },
+    {
+      id: 'ph-112',
+      fileName: '112_Defne_Yildiz.jpg',
+      dataUrl: createStudioPortraitDataUrl('DY', '112', '#6d28d9', '#2e1065'),
+      studentId: 'stu-112',
+      adjustments: { zoom: 1, brightness: 98, contrast: 100, warmth: 2 },
+      approvedForPrint: false,
+      createdAt: '2026-11-04T18:17:00Z',
+    },
+    {
+      id: 'ph-205',
+      fileName: '205_Selin_Arslan.jpg',
+      dataUrl: createStudioPortraitDataUrl('SA', '205', '#1d4ed8', '#172554'),
+      studentId: 'stu-205',
+      adjustments: { zoom: 1, brightness: 101, contrast: 103, warmth: 1 },
+      approvedForPrint: true,
+      createdAt: '2026-11-04T18:20:00Z',
+    },
+    {
+      id: 'ph-301',
+      fileName: '301_Kerem_Sahin.jpg',
+      dataUrl: createStudioPortraitDataUrl('KŞ', '301', '#0e7490', '#083344'),
+      studentId: 'stu-301',
+      adjustments: { zoom: 1, brightness: 100, contrast: 100, warmth: 0 },
+      approvedForPrint: true,
+      createdAt: '2026-11-04T18:22:00Z',
+    },
+  ],
+  albumConfig: {
+    selectedClassId: 'cls-9a',
+    layoutKind: 'class-chart',
+    headerTitle: 'ATATÜRK ANADOLU LİSESİ · 2026–2027 HATIRA ÇİZELGESİ',
+    accentColor: '#2563eb',
+    columns: 4,
+    showStudentNumbers: true,
+    showTeacherBadge: true,
+  },
+  syncQueue: [
+    {
+      id: 'sq-1',
+      entityType: 'class',
+      entityId: 'cls-9a',
+      operation: 'INSERT',
+      summary: '9-A sınıfı ve 4 öğrenci kaydı yerel SQLite veritabanına eklendi',
+      status: 'PENDING',
+      createdAt: '2026-11-04T18:18:00Z',
+    },
+  ],
+  lastSyncedAt: null,
+};
+

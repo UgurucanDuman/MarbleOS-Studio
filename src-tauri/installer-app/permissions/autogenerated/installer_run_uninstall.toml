@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-installer-run-uninstall"
+description = "Enables the installer_run_uninstall command without any pre-configured scope."
+commands.allow = ["installer_run_uninstall"]
+
+[[permission]]
+identifier = "deny-installer-run-uninstall"
+description = "Denies the installer_run_uninstall command without any pre-configured scope."
+commands.deny = ["installer_run_uninstall"]

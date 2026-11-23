@@ -1,0 +1,133 @@
+/* ── İZOLE MODÜL 01 STİLİ: Seçili Kayıt Portre Önizleme & Sağ Denetçi Büyüteci (<= 140 Satır) ── */
+
+.xl-inspector-portrait.has-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, transparent 58%, rgba(0, 0, 0, 0.36) 100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+.xl-inspector-portrait.has-photo:hover::after,
+.xl-inspector-portrait.has-photo:focus-visible::after {
+  opacity: 1;
+}
+
+.xl-inspector-portrait-zoom {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.68);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: scale(0.88);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.xl-inspector-portrait.has-photo:hover .xl-inspector-portrait-zoom,
+.xl-inspector-portrait.has-photo:focus-visible .xl-inspector-portrait-zoom {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.xl-portrait-preview-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.xl-portrait-preview-toolbar {
+  display: flex;
+  justify-content: center;
+}
+
+.xl-portrait-preview-stage {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 3 / 4;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--os-chip-bg);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.38), 0 0 0 1px var(--os-card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: max-width 0.28s cubic-bezier(0.16, 1, 0.3, 1), aspect-ratio 0.28s ease;
+}
+
+.xl-portrait-preview-stage.is-contain {
+  max-width: 410px;
+  aspect-ratio: 4 / 4.6;
+}
+
+.xl-portrait-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.xl-portrait-preview-stage.is-contain .xl-portrait-preview-img {
+  object-fit: contain;
+}
+
+.xl-portrait-preview-fallback {
+  font-size: 14px;
+  color: var(--os-text-muted);
+}
+
+.xl-portrait-preview-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--os-line);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--os-text-secondary);
+}
+
+.xl-portrait-preview-file {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--os-text-primary);
+  font-weight: 600;
+}
+
+.xl-portrait-preview-status {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: var(--os-text-secondary);
+}
+
+.xl-portrait-preview-status.is-ready {
+  color: #10b981;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xl-inspector-portrait.has-photo::after,
+  .xl-inspector-portrait-zoom,
+  .xl-portrait-preview-stage {
+    transition: none;
+  }
+}
+

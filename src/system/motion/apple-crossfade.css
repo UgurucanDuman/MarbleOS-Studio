@@ -1,0 +1,144 @@
+/**
+ * İZOLE SİSTEM STİLİ: Ortak Apple macOS Pro GPU-Compositor Sayfa İçi Çapraz Geçiş Sahnesi
+ * (src/system/motion/apple-crossfade.css)
+ * - Saf CSS compositor `@keyframes` (`opacity` + `translate3d`): ana iş parçacığından bağımsız
+ *   GPU thread'inde akar; `getComputedStyle` veya Motion JS projeksiyon yükü üretmez.
+ * - Çıkan katman `position: absolute; inset: 0; contain: layout style paint` ile akıştan çıkarılır;
+ *   kaldırıldığında layout reflow veya sıçrama oluşturmaz.
+ * - Durgun halde `transform: none` ve `will-change: auto` olduğu için sıfır boşta VRAM tutar.
+ * Dosya Sınırı Kuralı: .css <= 350 satır.
+ */
+
+.os-crossfade-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+}
+
+.os-crossfade-grid[data-variant='page'][data-transitioning='true'] {
+  overflow-x: clip;
+}
+
+.os-crossfade-cell {
+  grid-area: 1 / 1;
+  min-width: 0;
+}
+
+.os-crossfade-cell[data-exiting='true'] {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout style paint;
+  will-change: transform, opacity;
+}
+
+.os-crossfade-cell[data-exiting='true'] * {
+  animation-play-state: paused !important;
+}
+
+.os-crossfade-cell[data-entering='true'] {
+  position: relative;
+  z-index: 1;
+  will-change: transform, opacity;
+}
+
+/* ── Sayfa Geçişi (1:1 keskin translate3d + yumuşak çapraz erime) ── */
+@keyframes osCrossfadePageExit {
+  from {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(calc(var(--os-cf-dir, 1) * -12px), 0px, 0px);
+  }
+}
+
+@keyframes osCrossfadePageEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(calc(var(--os-cf-dir, 1) * 14px), 0px, 0px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.os-cf-exit-page {
+  animation: osCrossfadePageExit 160ms cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+.os-cf-enter-page {
+  animation: osCrossfadePageEnter 260ms cubic-bezier(0.22, 1, 0.36, 1) 45ms backwards;
+}
+
+/* ── Kart / Denetçi Geçişi (mikro dikey süzülüş + zarif derinlik) ── */
+@keyframes osCrossfadeCardExit {
+  from {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0px, -3px, 0px) scale(0.99);
+  }
+}
+
+@keyframes osCrossfadeCardEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0px, 6px, 0px) scale(0.986);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px) scale(1);
+  }
+}
+
+.os-cf-exit-card {
+  animation: osCrossfadeCardExit 150ms cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+.os-cf-enter-card {
+  animation: osCrossfadeCardEnter 240ms cubic-bezier(0.22, 1, 0.36, 1) 30ms backwards;
+}
+
+/* ── Azaltılmış Hareket (Yalnız opaklık çapraz geçişi) ── */
+@keyframes osCrossfadeFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes osCrossfadeFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.os-cf-exit-reduced {
+  animation: osCrossfadeFadeOut 100ms ease-out forwards;
+}
+
+.os-cf-enter-reduced {
+  animation: osCrossfadeFadeIn 120ms ease-out backwards;
+}
+
+[data-window-resizing='true'] .os-crossfade-cell {
+  animation: none !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .os-cf-exit-page,
+  .os-cf-exit-card {
+    animation: osCrossfadeFadeOut 100ms ease-out forwards;
+  }
+
+  .os-cf-enter-page,
+  .os-cf-enter-card {
+    animation: osCrossfadeFadeIn 120ms ease-out backwards;
+  }
+}

@@ -1,0 +1,160 @@
+/* ── İZOLE MODÜL 01 GÖRSEL KARTI STİLİ: Logo, Transparan Logo, İmza & Okul Resmi (<= 350 Satır) ── */
+
+/* Okul formu önizlemeleri (SchoolSheet + SchoolDetailPanel): kâğıt üzerinde filigran ve imza */
+.xl-asset-watermark,
+.xl-asset-sig {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: contrast(1.12);
+}
+
+/* ── Okul Birleştir ve Okul Sil Kartları ── */
+.xl-merge-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 210px;
+  padding: 4px;
+  border-radius: 10px;
+  background: var(--os-card-bg);
+  overflow-y: auto;
+}
+
+.xl-merge-row {
+  display: grid;
+  grid-template-columns: 18px 54px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 7px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.xl-merge-row:hover { background: rgba(161, 161, 170, 0.08); }
+.xl-merge-row.is-checked { background: var(--os-chip-bg); }
+
+.xl-delete-warn {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--os-card-bg);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--os-text-secondary);
+}
+
+.xl-delete-warn strong {
+  color: var(--os-text-primary);
+}
+
+/* ── Tablo Sütun Başlığı İkonları & Animasyonlu Toplu Silme Aksiyonu ── */
+@keyframes xlCheckPop {
+  0% { transform: scale(0.72); }
+  55% { transform: scale(1.14); }
+  100% { transform: scale(1); }
+}
+
+.xl-th-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.xl-th-label.is-right {
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.xl-th-label.is-center {
+  justify-content: center;
+  width: 100%;
+}
+
+.xl-th-icon {
+  flex-shrink: 0;
+}
+
+.xl-master-check-anchor {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xl-master-del-popover {
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 8px;
+  background: #e11d48;
+  color: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(225, 29, 72, 0.34), 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.xl-master-del-popover::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: #e11d48;
+  transform: translateY(-50%) rotate(45deg);
+  border-radius: 1.5px;
+}
+
+.xl-master-del-popover:hover {
+  background: #be123c;
+}
+
+.xl-master-del-popover:hover::before {
+  background: #be123c;
+}
+
+.xl-master-del-popover.is-confirming {
+  background: #be123c;
+  box-shadow: 0 8px 22px rgba(190, 18, 60, 0.45), 0 0 0 1.5px rgba(255, 255, 255, 0.28);
+}
+
+.xl-master-del-popover.is-confirming::before {
+  background: #be123c;
+}
+
+.xl-master-del-text {
+  display: inline-block;
+}
+
+/* ── Kurum İmza Önizleme Kutuları (SchoolDetailPanel) ── */
+.xl-mini-assets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.xl-mini-asset {
+  display: flex; flex-direction: column; gap: 4px; padding: 6px;
+  border: 1px solid var(--os-inspector-btn-border); border-radius: 8.5px;
+  background: var(--os-inspector-btn-bg); color: var(--os-text-primary);
+  font: inherit; text-align: left; cursor: pointer; transition: background 0.14s ease;
+}
+.xl-mini-asset:hover { background: var(--os-inspector-btn-hover); }
+.xl-mini-asset > span:first-child { font-size: 12px; font-weight: 600; color: var(--os-text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.xl-mini-box {
+  display: flex; align-items: center; justify-content: center; width: 100%; height: 44px;
+  padding: 4px; box-sizing: border-box; border-radius: 6px; background: var(--os-surface-subtle); overflow: hidden;
+}
+.xl-mini-box.is-paper { background: #f4f4f5; color: #52525b; }
+.xl-mini-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.xl-mini-box small { font-size: 12px; color: var(--os-text-muted); }

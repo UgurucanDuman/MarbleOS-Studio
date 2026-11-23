@@ -1,0 +1,151 @@
+/* İZOLE SİSTEM ORTAK PVC KİMLİK KARTI ETKİLEŞİMLİ TUVAL KILAVUZ, TUTAMAÇ & ARAÇ ÇUBUĞU STİLİ (.css <= 350 satır) */
+
+.pvc-safe-guide {
+  position: absolute;
+  border: 1px dashed rgba(37, 99, 235, 0.45);
+  border-radius: 1.4cqw;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.pvc-lanyard-guide {
+  width: 34%;
+  margin: 0 auto;
+  border-bottom: 1px dashed rgba(14, 165, 233, 0.65);
+  border-left: 1px dashed rgba(14, 165, 233, 0.65);
+  border-right: 1px dashed rgba(14, 165, 233, 0.65);
+  border-bottom-left-radius: 999px;
+  border-bottom-right-radius: 999px;
+}
+
+.pvc-snap-line {
+  position: absolute;
+  pointer-events: none;
+  z-index: 35;
+  background: rgba(37, 99, 235, 0.85);
+}
+
+.pvc-snap-line.is-vertical {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+
+.pvc-snap-line.is-horizontal {
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.pvc-drop-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #2563eb;
+  background: rgba(37, 99, 235, 0.25);
+  pointer-events: none;
+  z-index: 45;
+}
+
+.pvc-drop-pin span {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(14, 16, 22, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.pvc-resize-handle {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: #ffffff;
+  border: 1.5px solid #2563eb;
+  border-radius: 50%;
+  z-index: 40;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.pvc-resize-handle.is-nw { top: -5px; left: -5px; cursor: nwse-resize; }
+.pvc-resize-handle.is-n { top: -5px; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+.pvc-resize-handle.is-ne { top: -5px; right: -5px; cursor: nesw-resize; }
+.pvc-resize-handle.is-e { top: 50%; right: -5px; transform: translateY(-50%); cursor: ew-resize; }
+.pvc-resize-handle.is-se { bottom: -5px; right: -5px; cursor: nwse-resize; }
+.pvc-resize-handle.is-s { bottom: -5px; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+.pvc-resize-handle.is-sw { bottom: -5px; left: -5px; cursor: nesw-resize; }
+.pvc-resize-handle.is-w { top: 50%; left: -5px; transform: translateY(-50%); cursor: ew-resize; }
+
+.pvc-rotate-handle {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #2563eb;
+  border: 2px solid #ffffff;
+  cursor: grab;
+  z-index: 42;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+}
+
+.pvc-rotate-handle::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.5px;
+  height: 11px;
+  background: #2563eb;
+}
+
+.pvc-float-toolbar {
+  position: absolute;
+  bottom: calc(100% + 26px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px 5px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(18, 20, 26, 0.78);
+  backdrop-filter: blur(22px) saturate(165%);
+  -webkit-backdrop-filter: blur(22px) saturate(165%);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.42);
+  z-index: 50;
+}
+
+.pvc-float-toolbar button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #f4f4f5;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3.5px 6.5px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pvc-float-toolbar button:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.pvc-float-toolbar button.is-danger:hover {
+  background: rgba(220, 38, 38, 0.85);
+}

@@ -1,0 +1,342 @@
+/**
+ * İZOLE MODÜL 01 STİLİ: Öğrenci / Öğretmen Düzeltme & Kimlik Kartı Detay + Kişi Resmi Modalı
+ * (src/modules/excel-list/excel-student-sheet.css)
+ * Apple Pro Saf Siyah (#000000) zemin, sıfır turuncu, tıraşlanmış yüzeyler, 3:4 vesikalık oran.
+ * Dosya Sınırı Kuralı: .css <= 350 satır.
+ */
+
+.xl-stu-modal-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.32fr) 352px;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.xl-stu-form-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.xl-stu-modal-split .os-sheet-section {
+  gap: 7px;
+}
+
+.xl-stu-modal-split .os-sheet-section>h3 {
+  margin: 2px 0 0;
+}
+
+.xl-stu-modal-split .os-field {
+  gap: 4px;
+}
+
+.xl-stu-modal-split .os-field-input {
+  padding: 6px 9.5px;
+  font-size: 14px;
+}
+
+.xl-stu-teacher-top-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 8px;
+}
+
+.xl-stu-principal-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 8px;
+  background: var(--os-card-bg);
+  color: var(--os-text-primary);
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.xl-idcard-fields-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.xl-sheet-triple-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+/* ── Sağ Sütun: Öğrenci / Öğretmen Portresi (Sabit 3:4 Vesikalık Oranı) ── */
+.xl-stu-photo-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--os-card-border);
+  background: var(--os-card-bg);
+}
+
+.xl-stu-photo-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--os-text-secondary);
+}
+
+.xl-stu-photo-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 124px;
+  gap: 9px;
+  align-items: stretch;
+}
+
+.xl-stu-photo-stage-col {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.xl-stu-photo-frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: 296px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+  background: var(--os-chip-bg);
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: contain;
+}
+
+.xl-stu-photo-frame.is-interactive {
+  cursor: grab;
+}
+
+.xl-stu-photo-frame.is-dragging {
+  cursor: grabbing;
+}
+
+.xl-stu-frame-reticle {
+  position: absolute;
+  inset: 10px;
+  border-radius: 7px;
+  border: 1px dashed rgba(148, 163, 184, 0.28);
+  pointer-events: none;
+}
+
+.xl-stu-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  backface-visibility: hidden;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.xl-stu-photo-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  color: var(--os-text-muted);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.xl-stu-photo-empty strong {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--os-text-secondary);
+}
+
+.xl-stu-photo-empty small {
+  font-size: 12px;
+  color: var(--os-text-muted);
+}
+
+.xl-stu-photo-bottom-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.xl-stu-photo-tools-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.xl-stu-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5.5px;
+  width: 100%;
+  flex: 1 1 0;
+  padding: 6px 8.5px;
+  border: 1px solid var(--os-inspector-btn-border);
+  border-radius: 8.5px;
+  background: var(--os-inspector-btn-bg);
+  color: var(--os-text-primary);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+}
+
+.xl-stu-tool-btn:hover:not(:disabled) {
+  background: var(--os-inspector-btn-hover);
+}
+
+.xl-stu-tool-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.xl-stu-tool-btn.is-active {
+  background: var(--os-accent-soft);
+  color: var(--os-accent);
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px var(--os-accent-border);
+}
+
+.xl-stu-tool-btn:disabled {
+  opacity: 0.42;
+  cursor: default;
+}
+
+.xl-stu-crop-guide {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 9px;
+  border-radius: 9px;
+  border: 1px solid var(--os-card-border);
+  background: var(--os-surface-subtle);
+}
+
+.xl-stu-crop-silhouette {
+  width: 34px;
+  height: 44px;
+  flex-shrink: 0;
+  color: var(--os-text-secondary);
+}
+
+.xl-stu-crop-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.xl-stu-crop-copy span {
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--os-text-primary);
+}
+
+.xl-stu-crop-copy small {
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: var(--os-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.xl-stu-tool-popover {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+  padding: 8px 10px;
+  border-radius: 9px;
+  border: 1px solid var(--os-card-border);
+  background: var(--os-surface-subtle);
+}
+
+.xl-stu-metrics-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--os-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.xl-stu-dual-sliders {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.xl-stu-slider-label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--os-text-secondary);
+}
+
+.xl-stu-slider-label input[type='range'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  margin: 4px 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--os-check-bg) 0%, var(--os-accent) var(--os-range-fill, 0%), var(--os-chip-bg) var(--os-range-fill, 0%));
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+  touch-action: none;
+}
+
+.xl-stu-slider-label input[type='range']:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.xl-stu-slider-label input[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4), 0 0 0 0.5px rgba(0, 0, 0, 0.12);
+  transition: transform 0.12s ease;
+}
+
+.xl-stu-slider-label input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+@container studio-window (max-width: 780px) {
+  .xl-stu-modal-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

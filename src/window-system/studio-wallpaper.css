@@ -1,0 +1,163 @@
+/* ── İZOLE MASAÜSTÜ SAHNESİ: DUVAR KAĞITLARI, DİYAFRAM & VİZÖR (KARANLIK / AYDINLIK) ── */
+
+.os-desktop-wallpaper-layer {
+  /* Antrasit karanlık mod: göz yormayan grafit/obsidyen zemin */
+  --wp-bg: #131418;
+  --wp-halo: radial-gradient(52% 58% at 50% 48%,
+      rgba(212, 198, 172, 0.08) 0%,
+      rgba(59, 130, 246, 0.05) 46%,
+      rgba(19, 20, 24, 0) 74%);
+  --wp-barrel-hi: #424654;
+  --wp-barrel-lo: #171920;
+  --wp-knurl: rgba(255, 255, 255, 0.16);
+  --wp-ring: rgba(255, 255, 255, 0.09);
+  --wp-house-a: #1e2129;
+  --wp-house-b: #101217;
+  --wp-blade-hi: #3a3d49;
+  --wp-blade-lo: #15171e;
+  --wp-blade-stroke: rgba(255, 255, 255, 0.1);
+  --wp-blade-shadow: rgba(0, 0, 0, 0.55);
+  --wp-edge-hi: rgba(255, 255, 255, 0.45);
+  --wp-glass-a: #243470;
+  --wp-glass-b: #0b0e18;
+  --wp-glint: rgba(255, 255, 255, 0.48);
+  --wp-mark: #d4c4a8;
+  --wp-grid: rgba(255, 255, 255, 0.045);
+  --wp-frame: rgba(255, 255, 255, 0.25);
+  --wp-vignette: rgba(11, 12, 16, 0.4);
+  --wp-scrim: rgba(14, 16, 22, 0.18);
+
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  contain: strict;
+  transform: translateZ(0);
+  background: var(--wp-bg);
+}
+
+[data-theme='light'] .os-desktop-wallpaper-layer {
+  /* Alabaster aydınlık mod: sıcak porselen taş ve kuvars objektif */
+  --wp-bg: #eae8e2;
+  --wp-halo: radial-gradient(52% 58% at 50% 48%,
+      rgba(255, 253, 248, 0.85) 0%,
+      rgba(208, 198, 178, 0.22) 50%,
+      rgba(234, 232, 226, 0) 76%);
+  --wp-barrel-hi: #8d96a6;
+  --wp-barrel-lo: #bcc3d0;
+  --wp-knurl: rgba(30, 41, 59, 0.3);
+  --wp-ring: rgba(30, 41, 59, 0.2);
+  --wp-house-a: #e2e0d8;
+  --wp-house-b: #f3f2ed;
+  --wp-blade-hi: #f6f5f0;
+  --wp-blade-lo: #cbc9c0;
+  --wp-blade-stroke: rgba(24, 26, 32, 0.14);
+  --wp-blade-shadow: rgba(24, 26, 32, 0.18);
+  --wp-edge-hi: rgba(255, 255, 255, 0.92);
+  --wp-glass-a: #5b7fd1;
+  --wp-glass-b: #131b2e;
+  --wp-glint: rgba(255, 255, 255, 0.82);
+  --wp-mark: #a68c5c;
+  --wp-grid: rgba(24, 26, 32, 0.055);
+  --wp-frame: rgba(24, 26, 32, 0.28);
+  --wp-vignette: rgba(140, 145, 156, 0.16);
+  --wp-scrim: rgba(240, 239, 235, 0.12);
+}
+
+.os-wallpaper-photo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.os-wallpaper-scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--wp-scrim);
+}
+
+.os-wallpaper-halo {
+  position: absolute;
+  inset: 0;
+  background: var(--wp-halo);
+}
+
+.os-lens-svg {
+  position: absolute;
+  top: clamp(84px, 8vh, 112px);
+  left: 24px;
+  width: calc(100% - 48px);
+  height: calc(100% - clamp(84px, 8vh, 112px) - clamp(112px, 10vh, 144px));
+  display: block;
+  transform: translateZ(0);
+}
+
+.os-lens-blades {
+  filter: drop-shadow(0 6px 10px var(--wp-blade-shadow));
+}
+
+/* ── Vizör Kadrajı: Üçler Kuralı Izgarası + 4 Köşe İşareti ── */
+.os-viewfinder {
+  position: absolute;
+  top: 92px;
+  bottom: 116px;
+  left: 44px;
+  right: 44px;
+}
+
+.os-viewfinder-grid {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(var(--wp-grid), var(--wp-grid)) 33.333% 0 / 1px 100% no-repeat,
+    linear-gradient(var(--wp-grid), var(--wp-grid)) 66.666% 0 / 1px 100% no-repeat,
+    linear-gradient(var(--wp-grid), var(--wp-grid)) 0 33.333% / 100% 1px no-repeat,
+    linear-gradient(var(--wp-grid), var(--wp-grid)) 0 66.666% / 100% 1px no-repeat;
+}
+
+.os-vf-corner {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 0 solid var(--wp-frame);
+}
+
+.os-vf-corner.tl {
+  top: 0;
+  left: 0;
+  border-top-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.os-vf-corner.tr {
+  top: 0;
+  right: 0;
+  border-top-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+.os-vf-corner.bl {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.os-vf-corner.br {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+.os-desktop-wallpaper-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 48%,
+      rgba(0, 0, 0, 0) 46%,
+      var(--wp-vignette) 100%);
+}

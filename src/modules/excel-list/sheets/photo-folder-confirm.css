@@ -1,0 +1,65 @@
+/* ── İZOLE MODÜL 01 ALT STİLİ: Apple Pro Klasör Aktarım Onay Kartı & İlerleme Çubuğu (<= 350 Satır) ── */
+
+.xl-folder-confirm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 13px;
+  margin-bottom: 10px;
+  border-radius: 11px;
+  border: 1px solid var(--os-accent-border);
+  background: var(--os-card-bg);
+}
+
+.xl-folder-confirm-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.xl-folder-confirm-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.5px;
+  color: var(--os-text-primary);
+}
+
+.xl-folder-confirm-meta,
+.xl-folder-confirm-files,
+.xl-matcher-progress {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--os-text-secondary);
+}
+
+.xl-folder-confirm-files {
+  color: var(--os-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.xl-folder-confirm-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.xl-matcher-progress {
+  padding: 8px 11px;
+  margin-bottom: 8px;
+  border-radius: 9px;
+  background: var(--os-chip-bg);
+  font-variant-numeric: tabular-nums;
+}
+
+@container studio-window (max-width: 680px) {
+  .xl-folder-confirm {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

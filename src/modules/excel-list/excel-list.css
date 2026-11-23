@@ -1,0 +1,183 @@
+/* ── İZOLE MODÜL 01 STİLİ: Okul & Sınıf Listesi (<= 350 Satır) ── */
+
+.xl-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.xl-view-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+@media (min-width: 1440px) and (min-height: 900px) {
+  #window-excel-list[data-window-maximized='true'] .os-window-content {
+    overflow: clip;
+    scrollbar-gutter: auto;
+  }
+
+  #window-excel-list[data-window-maximized='true'] .xl-pane {
+    height: 100%;
+  }
+
+  #window-excel-list[data-window-maximized='true'] :is(
+    .xl-workspace-pages, .xl-class-stage, .xl-workspace-split, .xl-class-main > .os-crossfade-grid,
+    .xl-schools-view, .xl-student-table-wrap, .xl-school-list, .xl-table-scroll
+  ) {
+    flex: 1 1 0%;
+    min-height: 0;
+  }
+
+  #window-excel-list[data-window-maximized='true'] :is(
+    .xl-workspace-pages, .xl-workspace-split, .xl-class-main > .os-crossfade-grid, .xl-schools-view
+  ) {
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  #window-excel-list[data-window-maximized='true'] :is(
+    .xl-view-stage, .xl-workspace-split > .xl-class-main, .xl-schools-main, .xl-class-main .os-crossfade-cell
+  ) {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    min-height: 0;
+  }
+
+  #window-excel-list[data-window-maximized='true'] .xl-student-table-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #window-excel-list[data-window-maximized='true'] :is(.xl-student-table-wrap, .xl-school-list) > .xl-table-scroll {
+    max-height: none;
+  }
+
+  #window-excel-list[data-window-maximized='true'] :is(.xl-student-table-wrap, .xl-school-list) > :not(.xl-table-scroll) {
+    flex-shrink: 0;
+  }
+}
+
+/* ── Başlık: seçili okul ve okul işlemleri ── */
+.xl-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.xl-hero:has(.xl-school-popover),
+.xl-class-toolbar:has(.xl-cross-search-popover) {
+  position: relative;
+  z-index: 2;
+}
+
+.xl-hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.xl-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ── Butonlar ── */
+.xl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6.5px;
+  padding: 7.5px 13.5px;
+  border: none;
+  border-radius: 8px;
+  background: var(--os-chip-bg);
+  color: var(--os-text-primary);
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.xl-btn:hover { background: rgba(161, 161, 170, 0.2); }
+.xl-btn:active { transform: scale(0.97); }
+.xl-btn:focus-visible { outline: 2px solid var(--os-accent-border); outline-offset: 2px; }
+
+.xl-btn-primary {
+  background: var(--os-btn-primary-bg);
+  color: var(--os-btn-primary-text);
+  font-weight: 650;
+}
+
+.xl-btn-primary:hover { background: var(--os-btn-primary-bg); opacity: 0.88; }
+
+.xl-btn-danger {
+  background: rgba(244, 63, 94, 0.14);
+  color: #f43f5e;
+}
+
+.xl-btn-danger:hover {
+  background: rgba(244, 63, 94, 0.22);
+}
+
+.xl-btn-sm {
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+/* ── Şube seçimi ve araç satırları ── */
+.xl-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* ── Boş durum ── */
+.xl-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 64px 16px;
+  text-align: center;
+}
+
+.xl-empty h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.xl-empty p {
+  margin: 0 0 6px;
+  max-width: 340px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--os-text-secondary);
+}
+
+/* ── Öğrenci tablosu yardımcıları ── */
+.mod-table tr.is-checked td {
+  background: var(--os-accent-soft);
+}
+
+@container studio-window (max-width: 760px) {
+  .xl-hero,
+  .xl-bar { flex-wrap: wrap; align-items: flex-start; }
+  .xl-actions { flex-wrap: wrap; flex-shrink: 1; }
+  .xl-search { flex: 1 1 140px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xl-btn:active { transform: none; }
+}

@@ -1,0 +1,118 @@
+/* ── İZOLE MODÜL 03 STİLİ: Albüm, Sınıf Çizelgesi ve PVC Kimlik Komut Şeridi (<= 350 Satır) ── */
+
+.mod-approve-print-btn {
+  height: 33px;
+  padding: 0 12px;
+  border-radius: 9px;
+  border: 1px solid var(--os-accent-border);
+  background: var(--os-btn-primary-bg);
+  color: var(--os-btn-primary-text);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: filter 140ms ease, opacity 140ms ease;
+}
+
+.mod-approve-print-btn:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.mod-approve-print-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ── Albüm & Kimlik Komut Şeridi: Oksuz Apple Pro Tek Satır / Dengeli Kırılım ── */
+.mod-album-deck-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+
+.mod-album-deck-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.mod-album-deck-primary .os-apple-select.is-inline {
+  min-width: 118px;
+  max-width: 196px;
+}
+
+.mod-album-deck-primary .os-apple-select-btn {
+  min-height: 33px;
+  padding: 5px 9px;
+  font-size: 13.5px;
+}
+
+.mod-album-deck-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--os-win-border);
+  flex-shrink: 0;
+}
+
+.mod-album-deck-primary .xl-segment {
+  min-height: 33px;
+  padding: 3px;
+  border-radius: 9.5px;
+  background: color-mix(in srgb, var(--os-select-bg) 88%, transparent);
+}
+
+.mod-album-deck-primary .xl-segment-item {
+  border-radius: 7px;
+  letter-spacing: -0.01em;
+}
+
+.mod-album-deck-meta {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 1 1 180px;
+  min-width: 165px;
+}
+
+.mod-album-title-input {
+  flex: 1 1 110px;
+  min-width: 96px;
+  height: 33px;
+  padding: 0 10px;
+  font-size: 13px;
+}
+
+.mod-album-num-toggle {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 13px;
+  gap: 5px;
+}
+
+.mod-album-deck-spacer {
+  flex: 1 1 12px;
+}
+
+.mod-album-deck-bar .mod-approve-print-btn {
+  margin-left: auto;
+}
+
+.mod-cover-upload-btn {
+  min-height: 36px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  border: 1px dashed var(--os-accent-border);
+  background: var(--os-accent-soft);
+  color: var(--os-text-primary);
+  font-size: 13.8px;
+  font-weight: 600;
+  line-height: 1.3;
+  cursor: pointer;
+}

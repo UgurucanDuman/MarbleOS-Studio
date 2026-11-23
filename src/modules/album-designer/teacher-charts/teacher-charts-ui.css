@@ -1,0 +1,312 @@
+/* İZOLE MODÜL 03 · ÖĞRETMEN ÇİZELGE & CEP DEFTERİ ARAYÜZ STİLİ (.css <= 350 satır) */
+/* Hem Açık Tema hem Saf Siyah (#000000) Karanlık Mod ile %100 uyumlu, sıfır turuncu, sıfır rozet. */
+
+.tc-workspace {
+  display: grid;
+  grid-template-columns: clamp(256px, 31cqw, 308px) minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  min-height: 460px;
+}
+
+@container studio-window (max-width: 760px) {
+  .tc-workspace { grid-template-columns: 1fr; }
+}
+
+.tc-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px;
+  border: 4px solid transparent;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--os-text-primary) 3.5%, transparent);
+  max-height: min(74vh, calc(100vh - 205px));
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.tc-section {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tc-section + .tc-section {
+  padding-top: 10px;
+  border-top: 1px solid color-mix(in srgb, var(--os-text-primary) 7%, transparent);
+}
+
+.tc-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tc-section-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--os-text-secondary);
+}
+
+.tc-auto-link {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--os-accent);
+  cursor: pointer;
+}
+
+.tc-auto-link:hover { text-decoration: underline; }
+.tc-cat-list { display: flex; flex-direction: column; gap: 3px; }
+
+.tc-cat-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--os-text-primary);
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.tc-cat-btn:hover { background: color-mix(in srgb, var(--os-text-primary) 5.5%, transparent); }
+.tc-cat-btn.is-active { background: var(--os-accent-soft); color: var(--os-text-primary); }
+
+.tc-cat-btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.tc-cat-btn-text strong {
+  font-size: 14.5px;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.tc-cat-btn-text small {
+  font-size: 12.5px;
+  color: var(--os-text-secondary);
+}
+
+.tc-cat-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.tc-cat-btn.is-active .tc-cat-indicator { background: var(--os-accent); }
+.tc-tpl-list { display: flex; flex-direction: column; gap: 5px; }
+
+.tc-tpl-card {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+  text-align: left;
+  padding: 9px 10px;
+  border: none;
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--os-text-primary) 3%, transparent);
+  color: var(--os-text-primary);
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.tc-tpl-card:hover {
+  background: color-mix(in srgb, var(--os-text-primary) 6.5%, transparent);
+}
+
+.tc-tpl-card.is-active {
+  background: var(--os-accent-soft);
+  box-shadow: inset 2px 0 0 var(--os-accent);
+}
+
+.tc-tpl-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tc-tpl-top strong {
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.28;
+}
+
+.tc-tpl-meta {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--os-accent);
+  white-space: nowrap;
+}
+
+.tc-tpl-card small {
+  font-size: 12.8px;
+  line-height: 1.32;
+  color: var(--os-text-secondary);
+}
+
+.tc-palette-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.tc-palette-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 8px;
+  border: none;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--os-text-primary) 3%, transparent);
+  color: var(--os-text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+
+.tc-palette-btn:hover { background: color-mix(in srgb, var(--os-text-primary) 6.5%, transparent); }
+.tc-palette-btn.is-active { background: var(--os-accent-soft); box-shadow: inset 2px 0 0 var(--os-accent); }
+.tc-swatch { width: 15px; height: 15px; border-radius: 50%; flex-shrink: 0; }
+.tc-palette-btn span { font-size: 12.6px; font-weight: 600; line-height: 1.18; }
+.tc-ink-label { font-size: 12.5px; font-weight: 650; color: var(--os-text-primary); }
+.tc-ink-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; }
+
+.tc-ink-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 29px;
+  padding: 0;
+  border: none;
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--os-text-primary) 3.5%, transparent);
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+
+.tc-ink-btn:hover { background: color-mix(in srgb, var(--os-text-primary) 7.5%, transparent); }
+.tc-ink-btn.is-active { background: var(--os-accent-soft); box-shadow: inset 0 0 0 1.5px var(--os-accent); }
+
+.tc-ink-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24);
+}
+
+.tc-field-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tc-stage-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.tc-stage-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--os-text-primary) 3.5%, transparent);
+}
+
+.tc-stage-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.tc-stage-info strong {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--os-text-primary);
+}
+
+.tc-stage-info small {
+  font-size: 13px;
+  color: var(--os-text-secondary);
+}
+
+.tc-stage-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tc-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 650;
+  color: var(--os-text-primary);
+}
+
+.tc-step-btn {
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--os-text-primary) 6%, transparent);
+  color: var(--os-text-primary);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.tc-step-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.tc-paper-viewport {
+  container-type: inline-size;
+  --tc-paper-fit-limit: min(56vh, 95cqi);
+  --tc-paper-landscape-fit-limit: min(88vh, 95cqi);
+  display: flex;
+  padding: 14px 10px;
+  border: 4px solid transparent;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--os-text-primary) 4%, transparent);
+  overflow: auto;
+  overscroll-behavior: contain;
+  min-height: 440px;
+  max-height: min(74vh, calc(100vh - 210px));
+}
+
+.tc-paper-stage {
+  margin: auto;
+  flex-shrink: 0;
+}
+

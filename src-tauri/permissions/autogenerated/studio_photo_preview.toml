@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-studio-photo-preview"
+description = "Enables the studio_photo_preview command without any pre-configured scope."
+commands.allow = ["studio_photo_preview"]
+
+[[permission]]
+identifier = "deny-studio-photo-preview"
+description = "Denies the studio_photo_preview command without any pre-configured scope."
+commands.deny = ["studio_photo_preview"]

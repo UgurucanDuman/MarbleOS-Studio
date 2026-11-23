@@ -1,0 +1,265 @@
+/* ── İZOLE PENCERE SİSTEMİ: MERBLEOS OSWINDOWFRAME & 8 YÖNLÜ RESIZE (<= 240 Satır) ── */
+
+.os-window-frame {
+  --os-window-backdrop-blur: 24px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: transparent;
+  isolation: isolate;
+  border: 1px solid var(--os-win-border);
+  box-shadow: var(--os-win-shadow);
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.os-window-frame[data-window-maximized='true'] {
+  --os-window-backdrop-blur: 16px;
+}
+
+/* Cam yüzeyi pencere içeriğinden ayrı bir katmanda çizilir. */
+.os-window-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--os-win-bg);
+  backdrop-filter: blur(var(--os-window-backdrop-blur)) saturate(160%);
+  -webkit-backdrop-filter: blur(var(--os-window-backdrop-blur)) saturate(160%);
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+}
+
+.os-window-active {
+  border-color: var(--os-win-active-border);
+}
+
+.os-focus-surface {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  opacity: 1;
+  transform: none;
+  transform-origin: center;
+  transition:
+    opacity 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.os-focus-surface[data-focus-active='false'] {
+  opacity: 0.94;
+}
+
+.os-focus-floating[data-focus-active='false'] {
+  transform: scale(0.992);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .os-focus-surface,
+  .os-focus-floating {
+    transition: none;
+    transform: none;
+  }
+}
+
+.os-window-titlebar {
+  position: relative;
+  z-index: 100;
+  height: 44px;
+  padding: 0 8px 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--os-win-titlebar-bg);
+  border-bottom: 1px solid var(--os-win-border);
+  cursor: grab;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.os-window-titlebar:active {
+  cursor: grabbing;
+}
+
+.os-window-titlebar.is-locked {
+  cursor: default;
+}
+
+.os-titlebar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.os-titlebar-drag-spacer {
+  flex: 1;
+  height: 100%;
+  min-width: 16px;
+}
+
+.os-titlebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.os-titlebar-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.os-titlebar-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--os-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.os-titlebar-sep {
+  font-size: 13px;
+  color: var(--os-text-muted);
+  opacity: 0.45;
+}
+
+.os-titlebar-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--os-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── MerbleOS Pencere Kontrol Kapsülü ── */
+.os-control-capsule {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--os-chip-bg);
+  border: 1px solid var(--os-win-border);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.os-capsule-divider {
+  width: 1px;
+  height: 14px;
+  margin: 0 2px;
+  background: var(--os-win-border);
+}
+
+.os-capsule-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--os-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.14s ease, color 0.14s ease, transform 0.12s ease;
+}
+
+.os-capsule-btn:hover,
+.os-capsule-btn.active {
+  background: var(--os-btn-primary-bg);
+  color: var(--os-btn-primary-text);
+}
+
+.os-capsule-close:hover {
+  background: rgba(244, 63, 94, 0.2);
+  color: #f43f5e;
+}
+
+/* ── İçerik Alanı, Pasif Kaplama & Ultra İnce 3px Apple Scrollbar ── */
+.os-window-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+.os-window-sheet-host {
+  position: absolute;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.os-window-sheet-host:empty { display: none; }
+
+.os-window-content {
+  position: relative;
+  flex: 1 1 0%;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  padding: 20px 22px;
+  background: var(--os-win-content-bg);
+  color: var(--os-text-primary);
+  user-select: none;
+  -webkit-user-select: none;
+  contain: layout style paint;
+  container-type: inline-size;
+  container-name: studio-window;
+  overflow-anchor: none;
+  scrollbar-gutter: stable;
+  min-height: 0;
+}
+
+.os-content-dragging { pointer-events: none; user-select: none; }
+
+.os-window-frame[data-window-minimized='true'] .os-window-content {
+  content-visibility: hidden;
+}
+
+.os-window-frame[data-window-resizing='true'] .os-window-content *,
+.os-window-frame[data-window-size-transitioning='true'] .os-window-content * {
+  transition: none !important;
+}
+
+.os-inactive-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  cursor: default;
+}
+
+/* ── MerbleOS 8 Yönlü Pencere Boyutlandırma Tutamaçları ── */
+.os-resize-edge { position: absolute; z-index: 120; touch-action: none; user-select: none; }
+.os-resize-edge.edge-t { top: -3px; left: 8px; right: 8px; height: 6px; cursor: ns-resize; }
+.os-resize-edge.edge-b { bottom: -3px; left: 8px; right: 8px; height: 6px; cursor: ns-resize; }
+.os-resize-edge.edge-l { left: -3px; top: 8px; bottom: 8px; width: 6px; cursor: ew-resize; }
+.os-resize-edge.edge-r { right: -3px; top: 8px; bottom: 8px; width: 6px; cursor: ew-resize; }
+.os-resize-edge.edge-tl { top: -3px; left: -3px; width: 12px; height: 12px; cursor: nwse-resize; }
+.os-resize-edge.edge-tr { top: -3px; right: -3px; width: 12px; height: 12px; cursor: nesw-resize; }
+.os-resize-edge.edge-bl { bottom: -3px; left: -3px; width: 12px; height: 12px; cursor: nesw-resize; }
+.os-resize-edge.edge-br { bottom: -3px; right: -3px; width: 12px; height: 12px; cursor: nwse-resize; }

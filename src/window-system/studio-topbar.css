@@ -1,0 +1,242 @@
+/* ── İZOLE PENCERE SİSTEMİ STİLİ: 3 Sütunlu Orantılı Yüzen Üst Bar (<= 220 Satır) ── */
+
+.os-banner-wrap {
+  position: fixed;
+  top: 12px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: min(1680px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 0;
+  z-index: 500;
+}
+
+.os-topbar {
+  width: 100%;
+  min-height: 58px;
+  padding: 8px 16px;
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  background: var(--os-topbar-bg);
+  border: 1px solid var(--os-topbar-border);
+  box-shadow: var(--os-topbar-shadow);
+  backdrop-filter: blur(26px) saturate(180%);
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  transform: translateZ(0);
+}
+
+/* ── Sol Sütun: İkon ve Kusursuz Hizalı 2 Satırlı Yazı ── */
+.os-topbar-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  justify-self: start;
+}
+
+.os-topbar-logo-box {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.os-topbar-logo-box .studio-brand-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.os-topbar-titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.os-topbar-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.os-title-marble {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--os-text-primary);
+}
+
+.os-title-studio {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--os-text-secondary);
+  margin-left: 2px;
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.os-topbar-subtitle-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+  color: var(--os-text-muted);
+  white-space: nowrap;
+}
+
+.os-topbar-context-label {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.os-topbar-sep {
+  opacity: 0.5;
+}
+
+.os-active-win-name {
+  font-weight: 600;
+  color: var(--os-text-secondary);
+}
+
+/* ── Orta Sütun: Canlı Beyaz Tarih ve Saat Kutucukları ── */
+.os-topbar-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  justify-self: center;
+}
+
+.os-datetime-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 34px;
+  padding: 0 13px;
+  border-radius: 10px;
+  background: var(--os-chip-bg);
+  color: var(--os-text-primary);
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  contain: layout paint;
+}
+
+.os-datetime-box svg {
+  color: var(--os-text-primary);
+  opacity: 0.88;
+  flex-shrink: 0;
+}
+
+.os-date-box strong {
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--os-text-primary);
+}
+
+.os-clock-box strong {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--os-text-primary);
+}
+
+/* ── Sağ Sütun: Sistem Ayarları Eylemi ── */
+.os-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: end;
+}
+
+.os-topbar-settings-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: none;
+  background: var(--os-chip-bg);
+  color: var(--os-text-primary);
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: background 0.16s ease, color 0.16s ease;
+}
+
+.os-topbar-settings-btn:hover {
+  background: rgba(161, 161, 170, 0.18);
+}
+
+.os-topbar-settings-btn svg {
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1060px) {
+  .os-date-box {
+    display: none;
+  }
+}
+
+/* ── Gömülü Windows Pencere Düğmeleri (native başlık çubuğunun yerine) ── */
+.os-native-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 4px;
+  padding-left: 8px;
+  box-shadow: inset 1px 0 0 var(--os-topbar-border);
+}
+
+.os-native-btn {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--os-text-secondary, var(--os-text-primary));
+  cursor: pointer;
+  transition: background 0.16s ease, color 0.16s ease;
+}
+
+.os-native-btn:hover {
+  background: rgba(161, 161, 170, 0.18);
+  color: var(--os-text-primary);
+}
+
+.os-native-btn:focus-visible {
+  outline: 2px solid rgba(10, 132, 255, 0.7);
+  outline-offset: 1px;
+}
+
+.os-native-close:hover {
+  background: #e81123;
+  color: #ffffff;
+}
+
+.os-native-close:active {
+  background: #c50f1f;
+}

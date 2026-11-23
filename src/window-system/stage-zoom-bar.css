@@ -1,0 +1,78 @@
+/* İZOLE PENCERE SİSTEMİ · 0.5x – 5x (%500) SAHNE ZUM DENETÇİSİ (.css <= 350 satır) */
+
+.sz-zoom-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 6px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
+
+:root[data-theme='light'] .sz-zoom-bar {
+  background: rgba(0, 0, 0, 0.035);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.sz-zoom-btn {
+  height: 24px;
+  min-width: 26px;
+  padding: 0 7px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--os-text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sz-zoom-btn:hover:not(:disabled) {
+  background: var(--os-chip-bg);
+  color: var(--os-text-primary);
+}
+
+.sz-zoom-btn.is-active {
+  background: var(--os-accent-soft);
+  border-color: var(--os-accent-border);
+  color: var(--os-text-primary);
+}
+
+.sz-zoom-btn:disabled {
+  opacity: 0.36;
+  cursor: not-allowed;
+}
+
+.sz-zoom-slider {
+  width: 78px;
+  height: 4px;
+  accent-color: var(--os-accent);
+  cursor: pointer;
+}
+
+.sz-zoom-readout {
+  min-width: 42px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--os-text-primary);
+}
+
+.sz-zoom-sep {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+:root[data-theme='light'] .sz-zoom-sep {
+  background: rgba(0, 0, 0, 0.1);
+}
+

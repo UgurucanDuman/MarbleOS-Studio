@@ -1,0 +1,147 @@
+/* ── İZOLE MODÜL 01 STİLİ: Tüm Sınıflarda Öğrenci Arama Açılır Listesi (<= 350 Satır, Sıfır Turuncu) ── */
+
+.xl-cross-search-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 1 1 190px;
+  max-width: 248px;
+  min-width: 160px;
+}
+
+.xl-cross-search-input {
+  width: 100%;
+  background: var(--os-select-bg);
+  font-weight: 500;
+}
+
+.xl-cross-search-input:focus {
+  border-color: var(--os-accent-border);
+  box-shadow: 0 0 0 3px var(--os-accent-soft);
+}
+
+.xl-cross-search-popover {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: auto;
+  width: min(360px, 86vw);
+  max-height: 310px;
+  display: flex;
+  flex-direction: column;
+  z-index: 45;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--os-text-primary) 12%, transparent);
+  background: var(--os-popover-bg);
+  backdrop-filter: blur(36px) saturate(180%);
+  -webkit-backdrop-filter: blur(36px) saturate(180%);
+  transform: translate3d(0, 0, 0);
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.44), inset 0 0.5px 0 rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+}
+
+.xl-cross-search-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 11px;
+  border-bottom: 1px solid var(--os-table-grid);
+  background: var(--os-card-bg);
+  font-size: 11px;
+  color: var(--os-text-secondary);
+}
+
+.xl-cross-search-head strong {
+  color: var(--os-text-primary);
+  font-weight: 700;
+}
+
+.xl-cross-search-list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.xl-cross-search-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 7px 9px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--os-text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.xl-cross-search-item:hover,
+.xl-cross-search-item.is-highlighted {
+  background: var(--os-accent-soft);
+}
+
+.xl-cross-branch-tag {
+  flex-shrink: 0;
+  min-width: 44px;
+  padding: 2.5px 7px;
+  border-radius: 6px;
+  background: var(--os-accent-soft);
+  color: var(--os-accent);
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+[data-theme='light'] .xl-cross-branch-tag {
+  color: var(--os-accent);
+}
+
+.xl-cross-branch-tag.is-current {
+  background: var(--os-chip-bg);
+  color: var(--os-text-primary);
+}
+
+.xl-cross-item-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5px;
+}
+
+.xl-cross-item-main strong {
+  font-size: 12.5px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.xl-cross-item-main small {
+  font-size: 11px;
+  color: var(--os-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.xl-cross-photo-dot {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--os-text-muted);
+}
+
+.xl-cross-photo-dot.is-ok {
+  color: #10b981;
+}
+
+.xl-cross-search-empty {
+  margin: 0;
+  padding: 14px 12px;
+  font-size: 12px;
+  color: var(--os-text-muted);
+}

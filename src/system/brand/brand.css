@@ -1,0 +1,71 @@
+/* ── İZOLE SİSTEM STİLİ: MarbleOS Studio Marka Logosu (<= 70 Satır) ── */
+
+.studio-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.studio-brand-icon {
+  display: block;
+  flex-shrink: 0;
+  padding: 2px;
+  object-fit: contain;
+  border-radius: 23%;
+  border: 1px solid var(--studio-badge-rim);
+  background: linear-gradient(145deg, var(--studio-badge-hi), var(--studio-badge-lo));
+  --studio-badge-hi: #2b2e38;
+  --studio-badge-lo: #16181f;
+  --studio-badge-rim: #4b4f5c;
+}
+
+.studio-brand-icon.is-custom-logo {
+  padding: 0;
+  object-fit: cover;
+}
+
+[data-theme='light'] .studio-brand-icon {
+  --studio-badge-hi: #f6f5f1;
+  --studio-badge-lo: #dcd9d0;
+  --studio-badge-rim: #c4c0b6;
+}
+
+.studio-brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.08;
+}
+
+.studio-brand-mainline {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  letter-spacing: -0.02em;
+}
+
+.brand-marble,
+.brand-os {
+  font-weight: 800;
+  color: var(--os-brand-marble);
+  font-size: 18px;
+}
+
+.brand-studio {
+  font-weight: 500;
+  color: var(--os-brand-studio);
+  font-size: 17px;
+  margin-left: 2px;
+}
+
+.studio-brand-subline {
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--os-text-muted);
+  margin-top: 3px;
+  max-width: min(440px, 68vw);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

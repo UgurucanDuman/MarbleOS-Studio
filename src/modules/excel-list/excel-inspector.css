@@ -1,0 +1,301 @@
+/**
+ * İZOLE MODÜL 01 STİLİ: Sağ Apple Pro Denetçi Paneli (Okullar, Sınıflar & Öğretmen Ortak Yüzeyi)
+ * (src/modules/excel-list/excel-inspector.css)
+ * Tüm sağ denetçi kartları (`SchoolDetailPanel`, `StudioInspectorPanel`, `StaffBranchAssignBox`)
+ * aynı 3 katmanlı Apple macOS Pro yüzey hiyerarşisini ve `AppleSelect` / `xl-glass-pill` seçicilerini paylaşır.
+ * Dosya Sınırı Kuralı: .css <= 350 satır (Turuncu yasaktır).
+ */
+
+.xl-inspector {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 13px;
+  border-radius: 14px;
+  border: 1px solid var(--os-card-border);
+  background: var(--os-card-bg);
+}
+
+.xl-inspector-card,
+.xl-inspector-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 11px;
+  border: 1px solid var(--os-inspector-card-border);
+  background: var(--os-surface-subtle);
+}
+
+/* Denetçi içi ikincil butonlar: alt kart zemini üzerinde net ayrışan Apple grafit yüzey */
+.xl-inspector .xl-mini-btn:not(.xl-btn-primary),
+.xl-inspector .xl-btn:not(.xl-btn-primary) {
+  background: var(--os-inspector-btn-bg);
+  border: 1px solid var(--os-inspector-btn-border);
+}
+
+.xl-inspector .xl-mini-btn:not(.xl-btn-primary):hover:not(:disabled),
+.xl-inspector .xl-btn:not(.xl-btn-primary):hover:not(:disabled) {
+  background: var(--os-inspector-btn-hover);
+}
+
+.xl-inspector-selected {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.xl-inspector-portrait {
+  position: relative;
+  width: 86px;
+  height: 108px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0;
+  border: 1px solid var(--os-inspector-btn-border);
+  border-radius: 11px;
+  background: var(--os-inspector-btn-bg);
+  color: var(--os-text-muted);
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.16s ease, transform 0.14s ease;
+}
+
+.xl-inspector-portrait:hover {
+  border-color: var(--os-accent-border);
+}
+
+.xl-inspector-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.xl-inspector-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.xl-inspector-eyebrow {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--os-text-muted);
+}
+
+.xl-inspector-meta strong {
+  font-size: 17.5px;
+  font-weight: 700;
+  color: var(--os-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.xl-inspector-no {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--os-text-secondary);
+  font-variant-numeric: tabular-nums;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.xl-inspector-hint {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--os-text-muted);
+}
+
+.xl-inspector-single-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 4px;
+}
+
+.xl-inspector-move-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+  margin-top: 4px;
+}
+
+.xl-inspector-move-row>.xl-mini-btn,
+.xl-inspector-single-row>.xl-mini-btn {
+  min-width: 0;
+  padding: 6.5px 9px;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 5px;
+}
+
+/* Apple Glass Pill ile kayan 2x2 Kadro Unvan Seçici */
+.xl-role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3.5px;
+  padding: 3.5px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--os-text-primary) 9%, transparent);
+  background: var(--os-segment-bg);
+}
+
+.xl-role-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--os-text-secondary);
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.xl-role-pill:hover {
+  color: var(--os-text-primary);
+}
+
+.xl-role-pill.is-active {
+  color: var(--os-table-text);
+  font-weight: 600;
+}
+
+.xl-inspector-empty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 4px;
+  font-size: 13.5px;
+  color: var(--os-text-muted);
+}
+
+.xl-inspector-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--os-text-primary);
+}
+
+.xl-inspector-wide-btn {
+  width: 100%;
+  justify-content: center;
+  padding-block: 8.5px;
+  font-size: 14.5px;
+  font-weight: 650;
+}
+
+.xl-inspector-dual {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.xl-inspector-dual>.xl-mini-btn {
+  min-width: 0;
+  padding: 7px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 5.5px;
+}
+
+/* Apple Kapsül Grup Atama Satırı (AppleSelect & QuickStudentCapsule ile aynı aile) */
+.xl-inspector-group-form {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 36px;
+  padding: 3px 4px 3px 10px;
+  border: 1px solid color-mix(in srgb, var(--os-text-primary) 10%, transparent);
+  border-radius: 9px;
+  background: var(--os-select-bg);
+  transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.xl-inspector-group-form:focus-within {
+  border-color: var(--os-accent-border);
+  box-shadow: 0 0 0 3px var(--os-accent-soft);
+}
+
+.xl-inspector-group-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 4px 2px;
+  border: none;
+  background: transparent;
+  color: var(--os-text-primary);
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  outline: none;
+}
+
+.xl-inspector-group-submit {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border: 1px solid var(--os-inspector-btn-border);
+  border-radius: 7px;
+  background: var(--os-inspector-btn-bg);
+  color: var(--os-text-primary);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.xl-inspector-group-submit:hover {
+  background: var(--os-inspector-btn-hover);
+}
+
+.xl-staff-assigned-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.xl-staff-assigned-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 7px;
+  border: 1px solid var(--os-accent-border);
+  border-radius: 6px;
+  background: var(--os-accent-soft);
+  color: var(--os-accent);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.xl-staff-assigned-chip:hover:not(:disabled) {
+  background: rgba(244, 63, 94, 0.18);
+  border-color: rgba(244, 63, 94, 0.35);
+  color: #f43f5e;
+}

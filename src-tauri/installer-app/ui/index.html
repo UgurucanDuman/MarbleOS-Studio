@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MarbleOS Studio Kurulumu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="titlebar" data-tauri-drag-region>
+      <div class="titlebar-brand" data-tauri-drag-region>
+        <span class="titlebar-title" id="winTitle" data-tauri-drag-region>MarbleOS Studio Kurulumu</span>
+      </div>
+      <div class="titlebar-meta" data-tauri-drag-region>
+        <span class="titlebar-ver" id="winVer" data-tauri-drag-region>1.0.0</span>
+        <div class="titlebar-btns">
+          <button type="button" class="tb-btn" id="btnMin" aria-label="Küçült" title="Küçült">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 5h8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </button>
+          <button type="button" class="tb-btn tb-close" id="btnClose" aria-label="Kapat" title="Kapat">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="rail">
+        <div class="rail-top">
+          <div class="brand-lockup">
+            <svg width="36" height="36" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="mpaper" x2="1" y2="1"><stop stop-color="#fffefa"/><stop offset="1" stop-color="#dedbd2"/></linearGradient>
+                <linearGradient id="mpencil" x2="1" y2="0"><stop stop-color="#697586"/><stop offset="1" stop-color="#2e3745"/></linearGradient>
+              </defs>
+              <path d="M22 13h41l17 17v55a7 7 0 0 1-7 7H22a7 7 0 0 1-7-7V20a7 7 0 0 1 7-7Z" fill="#111827" opacity=".28" transform="translate(2 2)"/>
+              <path d="M22 9h41l17 17v55a7 7 0 0 1-7 7H22a7 7 0 0 1-7-7V16a7 7 0 0 1 7-7Z" fill="url(#mpaper)" stroke="#9ba1a9" stroke-width="2"/>
+              <path d="M63 10v11a5 5 0 0 0 5 5h11" fill="#c8ced6" stroke="#9ba1a9" stroke-width="2"/>
+              <g stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m27 59 19 17 19-17" stroke="#485566"/>
+                <path d="m27 50 19 17 19-17" stroke="#93836d"/>
+                <path d="m27 40 19-17 19 17-19 17Z" stroke="#9c623b"/>
+              </g>
+              <g transform="translate(59 85) rotate(45)">
+                <path d="M-5.5-10 0 0l5.5-10Z" fill="#c3a17b"/>
+                <path d="M-2.1-3.8 0 0l2.1-3.8Z" fill="#2e3745"/>
+                <path d="M-5.5-10v-29a3 3 0 0 1 3-3h5a3 3 0 0 1 3 3v29Z" fill="url(#mpencil)"/>
+                <path d="M-5.5-35h11v5h-11Z" fill="#c8ced6"/>
+              </g>
+            </svg>
+            <div class="brand-text">
+              <strong>MarbleOS</strong>
+              <span>Studio</span>
+            </div>
+          </div>
+          <ol id="stepList" class="step-list"></ol>
+        </div>
+        <div class="rail-foot">
+          <div>Yerel SQLite &amp; 300 DPI</div>
+          <div>Çevrimdışı Masaüstü</div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div id="pane" class="pane-host"></div>
+        <div id="errorBar" class="error-bar" hidden></div>
+        <footer class="footer">
+          <button type="button" id="btnBack" class="btn">Geri</button>
+          <div class="footer-right">
+            <button type="button" id="btnCancel" class="btn">Vazgeç</button>
+            <button type="button" id="btnNext" class="btn btn-primary">Devam</button>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </div>
+  <script src="wizard.js"></script>
+</body>
+</html>

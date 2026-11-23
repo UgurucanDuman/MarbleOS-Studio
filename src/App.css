@@ -1,0 +1,276 @@
+@import './modules/modules.css';
+@import './modules/module-controls.css';
+@import './modules/module-responsive.css';
+
+/* ── MarbleOS Studio — Masaüstü Ana Sahne & Filigran (<= 45 Satır) ── */
+
+.os-desktop-root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--os-bg-stage);
+}
+
+.os-desktop-stage {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.os-desktop-watermark {
+  position: absolute;
+  left: 32px;
+  bottom: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: none;
+  opacity: 0.62;
+  gap: 6px;
+}
+
+.os-desktop-watermark p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--os-text-secondary);
+}
+
+[data-theme='light'] .os-desktop-watermark {
+  opacity: 1;
+}
+
+[data-theme='light'] .os-desktop-watermark .brand-marble,
+[data-theme='light'] .os-desktop-watermark .brand-os {
+  color: #1c1e22;
+}
+
+[data-theme='light'] .os-desktop-watermark .brand-studio {
+  color: #494e57;
+}
+
+[data-theme='light'] .os-desktop-watermark :is(p, .studio-brand-subline) {
+  color: #5f6570;
+}
+/* ── Apple macOS Sonoma / Pro 3 Saniyelik Toast Bildirim Sistemi ── */
+.os-toast-stack {
+  position: fixed;
+  top: 76px;
+  right: 18px;
+  z-index: 2147483647;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(390px, calc(100vw - 36px));
+  pointer-events: none;
+}
+
+.os-toast-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 11px 13px 13px;
+  border-radius: 14px;
+  background: var(--os-tooltip-bg);
+  border: 1px solid var(--os-win-active-border);
+  box-shadow: var(--os-win-shadow);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  color: var(--os-text-primary);
+  pointer-events: auto;
+}
+
+.os-toast-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.os-toast-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.os-toast-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--os-text-primary);
+}
+
+.os-toast-message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--os-text-secondary);
+  word-break: break-word;
+}
+
+.os-toast-close {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--os-text-muted);
+  font-size: 16px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.os-toast-close:hover {
+  background: rgba(244, 63, 94, 0.18);
+  color: #f43f5e;
+}
+
+.os-toast-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2.5px;
+  width: 100%;
+  transform-origin: left center;
+  background: var(--os-accent);
+  animation: osToastCountdown linear forwards;
+}
+
+.os-toast-card.is-success .os-toast-progress { background: #10b981; }
+.os-toast-card.is-error .os-toast-progress { background: #f43f5e; }
+
+@keyframes osToastCountdown {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+
+/* ── Yerel Veri Kasası Kilit Ekranı (DPAPI Kurtarma Kapısı) ── */
+.os-vault-gate {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.os-vault-card {
+  width: min(460px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 24px 26px;
+  border-radius: 18px;
+  background: var(--os-tooltip-bg);
+  border: 1px solid var(--os-win-active-border);
+  box-shadow: var(--os-win-shadow);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+}
+
+.os-vault-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--os-chip-bg);
+  color: var(--os-text-primary);
+}
+
+.os-vault-card h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--os-text-primary);
+}
+
+.os-vault-card p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--os-text-secondary);
+}
+
+.os-vault-fp {
+  font-size: 13.5px;
+  color: var(--os-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.os-vault-fp strong {
+  color: var(--os-text-primary);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.os-vault-actions {
+  display: flex;
+  margin-top: 4px;
+}
+
+.os-vault-unlock-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 10px;
+  background: var(--os-btn-primary-bg);
+  color: var(--os-btn-primary-text);
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.16s ease, transform 0.12s ease;
+}
+
+.os-vault-unlock-btn:hover {
+  opacity: 0.9;
+}
+
+.os-vault-unlock-btn:active {
+  transform: scale(0.985);
+}
+
+.os-vault-unlock-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+  transform: none;
+}
+
+.os-license-machine-code {
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  letter-spacing: 0.06em;
+  user-select: all;
+}
+
+/* ── Üst Bardan Açılan Sistem Ayarları & El Kitabı Katmanı ── */
+.os-desktop-sheet-host {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+}
+

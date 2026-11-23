@@ -1,0 +1,63 @@
+/* İZOLE MODÜL 03 · PRO PVC KİMLİK KARTI KATMAN LİSTESİ STİLİ (.css <= 350 satır) */
+
+.pvc-layer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 210px;
+  overflow-y: auto;
+}
+
+.pvc-layer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 7px 9px;
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--os-text-primary) 3.5%, transparent);
+  cursor: pointer;
+  font-size: 13.4px;
+  color: var(--os-text-primary);
+}
+
+.pvc-layer-row.is-active {
+  background: var(--os-accent-soft);
+  box-shadow: inset 2px 0 0 var(--os-accent);
+}
+
+.pvc-layer-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 550;
+}
+
+.pvc-layer-btns {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.pvc-layer-icon-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--os-text-secondary);
+  font-size: 12.6px;
+  font-weight: 600;
+  padding: 3px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pvc-layer-icon-btn:hover {
+  background: color-mix(in srgb, var(--os-text-primary) 9%, transparent);
+  color: var(--os-text-primary);
+}
+
+.pvc-layer-icon-btn.is-danger:hover {
+  color: #dc2626;
+}

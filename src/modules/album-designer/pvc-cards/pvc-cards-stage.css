@@ -1,0 +1,340 @@
+/* İZOLE MODÜL 03 · PVC KİMLİK KARTI CANLI SAHNE, SINIF IZGARASI, ÖĞRENCİ ŞERİDİ & STÜDYO KARTI (.css <= 350 satır) */
+
+.pvc-stage-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  padding: 10px 13px;
+}
+
+.pvc-stage-title {
+  min-width: 180px;
+}
+
+.pvc-stage-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pvc-guide-toggle {
+  appearance: none;
+  border: none;
+  border-radius: 9px;
+  padding: 7px 12px;
+  font-size: 13.5px;
+  font-weight: 650;
+  background: color-mix(in srgb, var(--os-text-primary) 6.5%, transparent);
+  color: var(--os-text-secondary);
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.pvc-guide-toggle.is-on {
+  background: var(--os-accent-soft);
+  color: var(--os-accent);
+}
+
+.pvc-student-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--os-text-primary) 3%, transparent);
+}
+
+.pvc-student-counter {
+  font-size: 13.2px;
+  font-weight: 700;
+  color: var(--os-text-secondary);
+  font-variant-numeric: tabular-nums;
+  padding: 0 4px;
+}
+
+.pvc-student-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pvc-student-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pvc-student-select-wrap {
+  width: clamp(176px, 32cqi, 250px);
+  max-width: 52vw;
+}
+
+.pvc-edit-canvas-btn {
+  padding: 7px 13px;
+  font-size: 13.5px;
+}
+
+.pvc-student-empty-hint {
+  font-size: 13.5px;
+  color: var(--os-text-secondary);
+}
+
+.pvc-stage-viewport {
+  min-height: 390px;
+  max-height: min(60vh, calc(100vh - 240px));
+}
+
+.pvc-stage-crossfade {
+  width: 100%;
+  min-height: 100%;
+}
+
+.pvc-stage-crossfade-cell {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+}
+
+.pvc-both-stage {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.pvc-card-column {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+.pvc-side-caption {
+  font-size: 13.4px;
+  font-weight: 650;
+  color: var(--os-text-secondary);
+  text-align: center;
+}
+
+.pvc-class-card-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  align-content: start;
+}
+
+.pvc-class-card-grid.is-portrait {
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+}
+
+.pvc-grid-item {
+  cursor: pointer;
+  transition: transform 150ms ease;
+}
+
+.pvc-grid-item:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Alt Yatay Öğrenci Şeridi (Fare Tekerleği + Sol/Sağ Buton + Sürükle Kaydırma) ── */
+.pvc-filmstrip-shell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 7px;
+  border-radius: 13px;
+  background: color-mix(in srgb, var(--os-text-primary) 3%, transparent);
+}
+
+.pvc-film-nav-btn {
+  appearance: none;
+  border: none;
+  flex-shrink: 0;
+  width: 30px;
+  height: 40px;
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--os-text-primary) 7%, transparent);
+  color: var(--os-text-primary);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 140ms ease, opacity 140ms ease;
+}
+
+.pvc-film-nav-btn:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--os-text-primary) 14%, transparent);
+}
+
+.pvc-film-nav-btn:disabled {
+  opacity: 0.28;
+  cursor: default;
+}
+
+.pvc-filmstrip {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 2px 1px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  cursor: grab;
+  contain: layout style;
+}
+
+.pvc-filmstrip:active {
+  cursor: grabbing;
+}
+
+.pvc-film-chip {
+  appearance: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 4px;
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--os-text-primary) 5%, transparent);
+  color: var(--os-text-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+  text-align: left;
+  transition: background-color 180ms ease, padding 220ms cubic-bezier(0.22, 1, 0.36, 1), gap 220ms cubic-bezier(0.22, 1, 0.36, 1), transform 140ms ease;
+}
+
+.pvc-film-chip:hover {
+  background: color-mix(in srgb, var(--os-text-primary) 10%, transparent);
+  transform: translateY(-1px);
+}
+
+.pvc-film-chip.is-active {
+  gap: 9px;
+  padding: 4px 12px 4px 5px;
+  background: var(--os-accent-soft);
+  box-shadow: inset 0 0 0 1.5px var(--os-accent);
+}
+
+.pvc-film-thumb {
+  width: 32px;
+  height: 38px;
+  border-radius: 7px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--os-text-primary) 9%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pvc-film-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pvc-film-thumb em {
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--os-text-secondary);
+}
+
+.pvc-film-name {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 240ms cubic-bezier(0.22, 1, 0.36, 1), opacity 180ms ease;
+}
+
+.pvc-film-chip.is-active .pvc-film-name {
+  max-width: 170px;
+  opacity: 1;
+}
+
+.pvc-film-name strong {
+  font-size: 13.4px;
+  font-weight: 650;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pvc-film-name small {
+  font-size: 12px;
+  color: var(--os-text-secondary);
+  line-height: 1.15;
+}
+
+/* ── Stüdyo Künyesi Logo & Çok Satırlı Adres Kutusu ── */
+.pvc-studio-logo-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px;
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--os-text-primary) 3.5%, transparent);
+}
+
+.pvc-studio-logo-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 9px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--os-text-primary) 7%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--os-text-secondary);
+  flex-shrink: 0;
+}
+
+.pvc-studio-logo-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pvc-studio-logo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pvc-textarea {
+  resize: vertical;
+  min-height: 60px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.pvc-custom-edit-callout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 9px 11px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--os-text-primary) 3.5%, transparent);
+  font-size: 13.2px;
+  line-height: 1.4;
+  color: var(--os-text-secondary);
+}

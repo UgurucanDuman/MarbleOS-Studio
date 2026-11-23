@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-installer-init"
+description = "Enables the installer_init command without any pre-configured scope."
+commands.allow = ["installer_init"]
+
+[[permission]]
+identifier = "deny-installer-init"
+description = "Denies the installer_init command without any pre-configured scope."
+commands.deny = ["installer_init"]

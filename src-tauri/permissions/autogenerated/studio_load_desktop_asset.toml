@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-studio-load-desktop-asset"
+description = "Enables the studio_load_desktop_asset command without any pre-configured scope."
+commands.allow = ["studio_load_desktop_asset"]
+
+[[permission]]
+identifier = "deny-studio-load-desktop-asset"
+description = "Denies the studio_load_desktop_asset command without any pre-configured scope."
+commands.deny = ["studio_load_desktop_asset"]

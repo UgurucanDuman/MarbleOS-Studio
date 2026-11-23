@@ -1,0 +1,163 @@
+/* İZOLE SİSTEM KATMANI · VEKTÖR ÖLÇEKLENEBİLİR (cqi) A4 KAĞIT ÇERÇEVESİ (.css <= 350 satır) */
+/* Modül 03 ve Modül 04 ortak canlı kağıt sahnesi; 0.5x – 5x zumda bulanıklaşmadan keskin büyür. */
+
+.tc-scale-frame {
+  position: relative;
+  aspect-ratio: 210 / 297;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.22), 0 1px 3px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.tc-scale-frame.is-landscape,
+.tc-a4-paper.is-landscape {
+  aspect-ratio: 297 / 210;
+}
+
+.tc-a4-paper {
+  --tc-line-thin: max(calc(1px * var(--tc-inv-scale, 1)), calc(0.16 * var(--tc-mm, 4.95px)));
+  --tc-line-mid: max(calc(1.2px * var(--tc-inv-scale, 1)), calc(0.24 * var(--tc-mm, 4.95px)));
+  --tc-line-strong: max(calc(1.55px * var(--tc-inv-scale, 1)), calc(0.32 * var(--tc-mm, 4.95px)));
+  container-type: inline-size;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 16px;
+  width: 100%;
+  aspect-ratio: 210 / 297;
+  margin: 0;
+  background: #ffffff;
+  color: var(--tc-ink, #09090b);
+  padding: 2.8% 3.5% 4.2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  user-select: none;
+  flex-shrink: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.tc-a4-paper *,
+.tc-a4-paper *::before,
+.tc-a4-paper *::after {
+  box-sizing: border-box;
+}
+
+.tc-a4-paper.is-scaled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  will-change: transform;
+}
+
+.tc-watermark {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 34%;
+  max-height: 34%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tc-doc-head {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 8cqi 1fr 8cqi;
+  align-items: center;
+  gap: 1cqi;
+  margin-bottom: 0.4cqi;
+  flex-shrink: 0;
+}
+
+.tc-head-logo {
+  width: 6.4cqi;
+  height: 6.4cqi;
+  object-fit: contain;
+}
+
+.tc-head-center {
+  text-align: center;
+  line-height: 1.18;
+}
+
+.tc-head-school {
+  font-size: 1.75cqi;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--tc-ink, #09090b);
+}
+
+.tc-head-course {
+  font-size: 1.32cqi;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  color: var(--tc-ink-sub, #27272a);
+}
+
+.tc-head-title {
+  font-size: 1.54cqi;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: var(--tc-heading-ink, var(--tc-accent, #1b365d));
+}
+
+.tc-meta-strip {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 1.42cqi;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.tc-meta-branch {
+  color: var(--tc-heading-ink, var(--tc-accent, #1b365d));
+  font-size: 1.62cqi;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.tc-meta-teacher {
+  font-weight: 600;
+  color: var(--tc-ink-sub, #334155);
+  margin-left: 0.5cqi;
+  font-size: 0.88em;
+}
+
+.tc-doc-foot {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-top: 0.85cqi;
+  padding-bottom: 1.1cqi;
+  font-size: 1.32cqi;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.tc-sig-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2cqi;
+}
+
+.tc-sig-block span {
+  color: var(--tc-ink-sub, #334155);
+}
+
+.tc-sig-img {
+  height: 3.1cqi;
+  object-fit: contain;
+}

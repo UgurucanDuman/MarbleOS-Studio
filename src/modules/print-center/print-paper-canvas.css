@@ -1,0 +1,171 @@
+/* ── İZOLE MODÜL 04 FİZİKSEL KÂĞIT & KART TUVALİ STİLİ: Portre, CR80 Kimlik, Albüm Panosu ve 50 mm Cetvel (<= 350 Satır) ── */
+
+.pc-paper-sheet {
+  font-size: 16px;
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.56), 0 0 0 0.5px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  user-select: none;
+  transition: max-width 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pc-paper-sheet.is-cr80-single {
+  border-radius: 12px;
+}
+
+.pc-paper-header {
+  position: absolute;
+  top: 1.6%;
+  left: 4.5%;
+  right: 4.5%;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 8.5px;
+  font-weight: 600;
+  color: #27272a;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.pc-paper-slot {
+  position: absolute;
+}
+
+.pc-paper-slot.has-crop-outline,
+.pc-idcard-slot.has-crop-outline {
+  outline: 0.75px dashed rgba(82, 82, 91, 0.58);
+  outline-offset: 1.5px;
+}
+
+.pc-paper-photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f4f4f5;
+  border: 0.5px solid #e4e4e7;
+}
+
+.pc-paper-sheet.is-studio-bio-card .pc-paper-photo {
+  border: none;
+  background: #ffffff;
+}
+
+.pc-bio-studio-footer {
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  bottom: 3.4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #18181b;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.pc-bio-studio-footer strong {
+  font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pc-bio-studio-footer span {
+  flex-shrink: 0;
+  font-weight: 800;
+}
+
+.pc-rotated-portrait-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.pc-bio-transform-layer {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  backface-visibility: hidden;
+}
+
+.pc-paper-sheet.is-fit-scale::after {
+  content: '';
+  position: absolute;
+  inset: 2.2%;
+  border: 0.75px dashed rgba(37, 99, 235, 0.34);
+  pointer-events: none;
+}
+
+.pc-paper-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pc-paper-caption {
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  top: calc(100% + 2px);
+  font-size: 7.5px;
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+  color: #18181b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── CR80 / Özel Boyut PVC Kimlik Kartı Canlı Önizleme Katmanı ── */
+.pc-idcard-slot {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.pc-idcard-slot.pc-idcard-live-host {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.pc-paper-ruler {
+  position: absolute;
+  bottom: 1.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.pc-paper-ruler-line {
+  width: 100%;
+  height: 3.5px;
+  border-bottom: 1px solid #18181b;
+  border-left: 1px solid #18181b;
+  border-right: 1px solid #18181b;
+}
+
+.pc-paper-ruler span {
+  font-size: 6.5px;
+  font-weight: 700;
+  color: #27272a;
+  white-space: nowrap;
+}
+

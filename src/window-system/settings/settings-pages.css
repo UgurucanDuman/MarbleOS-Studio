@@ -1,0 +1,262 @@
+/* ── MarbleOS Sistem El Kitabı: Sayfa İçi Kartlar, Tema Seçici ve Resmi Tescil Kartları (<= 350 Satır) ── */
+
+.os-book-page-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.os-book-lead {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.os-book-lead-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  margin-top: 1px;
+}
+
+.os-book-lead h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--os-text-primary);
+}
+
+.os-book-lead p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.52;
+  color: var(--os-text-secondary);
+}
+
+.os-book-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 13px 15px;
+  border-radius: 12px;
+  border: 1px solid var(--os-card-border);
+  background: var(--os-card-bg);
+}
+
+.os-book-card h4 {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--os-text-primary);
+}
+
+.os-book-card p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.52;
+  color: var(--os-text-secondary);
+}
+
+.os-book-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.os-book-card-head span {
+  font-size: 11px;
+  color: var(--os-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.os-book-kv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px 16px;
+  margin: 0;
+}
+
+.os-book-kv-grid>div.is-full {
+  grid-column: 1 / -1;
+}
+
+.os-book-kv-grid dt {
+  font-size: 10.5px;
+  color: var(--os-text-muted);
+  margin-bottom: 2px;
+}
+
+.os-book-kv-grid dd {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--os-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.os-book-mono,
+.os-book-secret-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.03em;
+  word-break: break-all;
+  user-select: all;
+}
+
+.os-book-secret-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11.5px;
+}
+
+.os-book-secret-head span {
+  font-size: 11px;
+  color: var(--os-text-muted);
+}
+
+.os-book-note {
+  font-size: 11.5px;
+  color: var(--os-text-secondary);
+}
+
+.os-book-inline-error {
+  font-size: 11.5px;
+  color: #f43f5e !important;
+}
+
+.os-book-card-actions,
+.os-book-file-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.os-book-file-label {
+  font-size: 11.5px;
+  color: var(--os-text-secondary);
+}
+
+.os-book-action-btn,
+.os-book-turn-btn,
+.os-book-close-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6.5px;
+  padding: 7.5px 13.5px;
+  border: none;
+  border-radius: 8px;
+  background: var(--os-chip-bg);
+  color: var(--os-text-primary);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.os-book-action-btn:hover:not(:disabled),
+.os-book-turn-btn:hover:not(:disabled),
+.os-book-close-btn:hover {
+  background: rgba(161, 161, 170, 0.2);
+}
+
+.os-book-action-btn:disabled,
+.os-book-turn-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.os-book-action-btn.is-primary {
+  background: var(--os-btn-primary-bg);
+  color: var(--os-btn-primary-text);
+}
+
+.os-book-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.os-book-scope-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.os-book-scope-btn {
+  padding: 7px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: var(--os-chip-bg);
+  color: var(--os-text-secondary);
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.os-book-scope-btn.is-active {
+  color: var(--os-text-primary);
+  border-color: var(--os-accent-border);
+  background: var(--os-accent-soft);
+  box-shadow: 0 0 0 1px var(--os-accent-border);
+}
+
+.os-book-theme-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 10px 11px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: var(--os-chip-bg);
+  color: var(--os-text-secondary);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.os-book-theme-option strong {
+  font-size: 11.5px;
+  color: var(--os-text-primary);
+}
+
+.os-book-theme-option small {
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: var(--os-text-muted);
+}
+
+.os-book-theme-option.is-active {
+  border-color: var(--os-accent-border);
+  background: var(--os-accent-soft);
+  box-shadow: 0 0 0 1px var(--os-accent-border);
+}
+
+.os-book-prose-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.os-book-cert-header span {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--os-text-muted);
+  margin-bottom: 2px;
+}
+
+.os-book-legal-foot {
+  margin: 2px 0 0;
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: var(--os-text-muted);
+}

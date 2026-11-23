@@ -1,0 +1,232 @@
+/**
+ * İZOLE MODÜL 01 STİLİ: 20'li Apple Pro Tablo Kutucuk İskelet Yükleme (GPU Specular Shimmer)
+ * (src/modules/excel-list/table-skeleton.css)
+ * Saf siyah (#000000) dark mode uyumlu, gerçek tablo hücre sınırlarıyla (grid) birebir hizalı,
+ * yalnızca GPU compositor (transform: translate3d) üzerinde akan Apple macOS Pro iskelet yapısı.
+ * Dosya Sınırı Kuralı: .css <= 350 satır.
+ */
+
+@keyframes xlAppleShimmer {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes xlSkeletonEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.xl-skeleton-layer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: transparent;
+  pointer-events: none;
+  user-select: none;
+  contain: layout paint style;
+  animation: xlSkeletonEnter 0.14s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.xl-skeleton-layer.is-overlay {
+  border-top: 1px solid var(--os-table-grid);
+}
+
+.xl-tbody-deferred {
+  display: none;
+}
+
+.xl-skeleton-row {
+  display: grid;
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--os-table-grid);
+  background: transparent;
+}
+
+/* Öğrenci tablosu 11 sütun ızgarası */
+.xl-skeleton-row.is-students {
+  min-height: 58px;
+  grid-template-columns: 38px 46px 86px minmax(96px, 0.39fr) minmax(96px, 0.39fr) 68px minmax(88px, 0.22fr) 58px 58px 144px 74px;
+}
+
+/* Okullar tablosu 9 sütun ızgarası (.xl-school-row ile birebir aynı) */
+.xl-skeleton-row.is-schools {
+  min-height: 39px;
+  min-width: 814px;
+  grid-template-columns: 36px 68px 112px minmax(132px, 1.4fr) minmax(114px, 1.05fr) minmax(124px, 1.05fr) 72px 84px 72px;
+}
+
+/* Kompakt önizleme tablosu 4 sütun ızgarası */
+.xl-skeleton-row.is-compact {
+  min-height: 36px;
+  grid-template-columns: 44px 96px minmax(110px, 1.2fr) minmax(110px, 1.2fr);
+}
+
+.xl-sk-cell {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 6px 9px;
+  border-right: 1px solid var(--os-table-grid);
+  box-sizing: border-box;
+}
+
+.xl-sk-cell:last-child {
+  border-right: none;
+}
+
+.xl-sk-cell.is-center {
+  justify-content: center;
+  padding: 6px 4px;
+}
+
+.xl-sk-cell.is-right {
+  justify-content: flex-end;
+}
+
+/* Apple macOS Pro mat grafit kemik kutucuğu + GPU speküler ışık geçişi */
+.xl-sk-bone {
+  position: relative;
+  display: inline-block;
+  height: 11px;
+  border-radius: 4.5px;
+  background: rgba(255, 255, 255, 0.065);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+[data-theme='light'] .xl-sk-bone {
+  background: rgba(15, 23, 42, 0.065);
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.04);
+}
+
+.xl-sk-bone::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+  transform: translate3d(-100%, 0, 0);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.07) 42%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.07) 58%,
+    transparent 100%
+  );
+  animation: xlAppleShimmer 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+[data-theme='light'] .xl-sk-bone::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 42%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(255, 255, 255, 0.45) 58%,
+    transparent 100%
+  );
+}
+
+.xl-sk-bone.is-strong {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+[data-theme='light'] .xl-sk-bone.is-strong {
+  background: rgba(15, 23, 42, 0.095);
+}
+
+.xl-sk-bone.is-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.xl-sk-bone.is-sn {
+  width: 18px;
+  height: 10.5px;
+  border-radius: 4px;
+}
+
+.xl-sk-bone.is-code {
+  width: 42px;
+  height: 11.5px;
+  border-radius: 4px;
+}
+
+.xl-sk-bone.is-badge {
+  width: 56px;
+  height: 19px;
+  border-radius: 5.5px;
+}
+
+.xl-sk-bone.is-portrait {
+  width: 27px;
+  height: 34px;
+  border-radius: 6px;
+}
+
+.xl-sk-file {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+}
+
+.xl-sk-bone.is-mini-icon {
+  width: 13px;
+  height: 13px;
+  border-radius: 3.5px;
+}
+
+.xl-sk-bone.is-group {
+  width: 26px;
+  height: 17px;
+  border-radius: 5px;
+}
+
+.xl-sk-bone.is-status {
+  width: 96px;
+  height: 20px;
+  border-radius: 6px;
+}
+
+.xl-sk-bone.is-num {
+  width: 22px;
+  height: 11.5px;
+}
+
+.xl-sk-bone.is-num-wide {
+  width: 30px;
+  height: 11.5px;
+}
+
+.xl-sk-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.xl-sk-bone.is-icon-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xl-sk-bone::after {
+    animation: none;
+  }
+}

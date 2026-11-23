@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-studio-save-export"
+description = "Enables the studio_save_export command without any pre-configured scope."
+commands.allow = ["studio_save_export"]
+
+[[permission]]
+identifier = "deny-studio-save-export"
+description = "Denies the studio_save_export command without any pre-configured scope."
+commands.deny = ["studio_save_export"]

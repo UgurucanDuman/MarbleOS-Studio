@@ -1,0 +1,42 @@
+node_modules/
+dist/
+*.local
+.DS_Store
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Rust / Tauri derleme çıktıları (yeniden üretilebilir, ~11 GB)
+src-tauri/target/
+src-tauri/installer-app/target/
+
+# Kurulum ve paket çıktıları
+*.exe
+*.msi
+*.msix
+*.nsis.zip
+*.sig
+
+# Gizli anahtar, sertifika ve ortam dosyaları
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Müşteri / okul verisi ve dışa aktarımlar asla depoya girmez
+*.xlsx
+*.xls
+*.csv
+exports/
+backups/
+
+# Araç ve editör dosyaları
+coverage/
+*.log
+.vscode/
+.idea/
+Thumbs.db
+.claude/settings.local.json

@@ -1,0 +1,163 @@
+/* İZOLE SİSTEM KATMANI · FİZİKSEL MİLİMETRE ÖLÇEKLİ A4 TABLO BASKI GEOMETRİSİ (.css <= 350 satır) */
+
+.tc-a4-paper.tc-tabular-paper {
+  --tc-pt: calc(var(--tc-mm) * 25.4 / 72);
+  padding: calc(5.2 * var(--tc-mm)) calc(var(--tc-margin-mm) * var(--tc-mm)) 0;
+  font-family: Inter, Arial, 'Segoe UI', sans-serif;
+}
+
+.tc-tabular-head {
+  position: relative;
+  height: calc((var(--tc-table-top-mm) - 5.2) * var(--tc-mm));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: calc(1.15 * var(--tc-mm));
+  flex-shrink: 0;
+}
+
+.tc-inst-rule {
+  width: 100%;
+  height: calc(0.52 * var(--tc-mm));
+  background: var(--tc-accent, #1b365d);
+  box-shadow: 0 calc(0.55 * var(--tc-mm)) 0 0 color-mix(in srgb, var(--tc-accent, #1b365d) 26%, transparent);
+  margin-bottom: calc(0.9 * var(--tc-mm));
+  flex-shrink: 0;
+}
+
+.tc-tabular-paper .tc-doc-head {
+  grid-template-columns: calc(13 * var(--tc-mm)) minmax(0, 1fr) calc(13 * var(--tc-mm));
+  align-items: center;
+  gap: calc(2 * var(--tc-mm));
+  margin: 0;
+}
+
+.tc-tabular-paper .tc-head-center {
+  line-height: 1.14;
+}
+
+.tc-tabular-paper .tc-head-school {
+  font-weight: 800;
+}
+
+.tc-tabular-paper .tc-head-course {
+  font-size: calc(8.6 * var(--tc-pt));
+  margin-top: calc(0.45 * var(--tc-mm));
+  text-wrap: balance;
+}
+
+.tc-tabular-paper .tc-head-title {
+  font-size: calc(11.2 * var(--tc-pt));
+  margin-top: calc(0.5 * var(--tc-mm));
+}
+
+.tc-tabular-paper .tc-meta-strip {
+  font-size: calc(8.8 * var(--tc-pt));
+  padding-top: calc(0.65 * var(--tc-mm));
+  border-top: var(--tc-line-thin) solid color-mix(in srgb, var(--tc-border, #09090b) 20%, transparent);
+  margin: 0;
+}
+
+.tc-tabular-paper .tc-meta-branch {
+  font-size: calc(9.8 * var(--tc-pt));
+}
+
+.tc-tabular-paper .tc-panels-grid {
+  gap: calc(var(--tc-panel-gap-mm) * var(--tc-mm));
+}
+
+.tc-tabular-paper .tc-thead {
+  height: calc(var(--tc-header-mm) * var(--tc-mm));
+}
+
+.tc-tabular-paper .tc-th-id {
+  flex-direction: column;
+  gap: calc(0.55 * var(--tc-mm));
+  width: calc((var(--tc-identity-mm) + var(--tc-period-mm)) * var(--tc-mm));
+  font-size: calc(7.4 * var(--tc-pt));
+}
+
+.tc-tabular-paper .tc-th-group-title {
+  font-size: calc(7 * var(--tc-pt));
+}
+
+.tc-tabular-paper .tc-th-groups.is-sok .tc-th-group-title {
+  font-size: calc(9.2 * var(--tc-pt));
+}
+
+.tc-tabular-paper .tc-th-sub-cell {
+  font-size: calc(6.5 * var(--tc-pt));
+}
+
+.tc-tabular-paper .tc-seq-cell {
+  width: calc(var(--tc-sequence-mm) * var(--tc-mm));
+  font-size: calc(7.5 * var(--tc-pt));
+}
+
+.tc-tabular-paper :is(.tc-id-side, .tc-id-side.is-sok, .tc-id-stacked) {
+  width: calc(var(--tc-identity-mm) * var(--tc-mm));
+}
+
+.tc-tabular-paper :is(.tc-vert-name, .tc-id-side.is-sok .tc-vert-name) {
+  width: calc(var(--tc-name-mm) * var(--tc-mm));
+  padding: calc(0.28 * var(--tc-mm)) calc(0.16 * var(--tc-mm));
+}
+
+.tc-id-stacked {
+  display: flex;
+  flex-direction: column;
+  border-right: var(--tc-line-thin) solid var(--tc-hairline, #64748b);
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.tc-horiz-name {
+  background: var(--tc-summary-tint, #f5f9ff);
+  border-top: var(--tc-line-thin) solid var(--tc-hairline, #64748b);
+  font-weight: 700;
+  line-height: 1.08;
+  color: var(--tc-ink, #09090b);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.tc-tabular-paper .tc-horiz-name {
+  height: calc(min(9, var(--tc-row-mm) * 0.32) * var(--tc-mm));
+  flex-shrink: 0;
+  padding: 0 calc(0.35 * var(--tc-mm));
+}
+
+.tc-tabular-paper :is(.tc-photo-side-wrap, .tc-photo-stack-wrap) {
+  padding: calc(0.55 * var(--tc-mm));
+}
+
+.tc-tabular-paper .tc-photo-3x4 {
+  height: 100%;
+}
+
+.tc-tabular-paper .tc-subtag-col {
+  width: calc(var(--tc-period-mm) * var(--tc-mm));
+}
+
+.tc-tabular-paper .tc-subtag-cell {
+  font-size: calc(6.3 * var(--tc-pt));
+}
+
+.tc-tabular-paper .tc-doc-foot {
+  height: calc(var(--tc-footer-mm) * var(--tc-mm));
+  padding: calc(2.6 * var(--tc-mm)) 0 0;
+  font-size: calc(8 * var(--tc-pt));
+}
+
+.tc-tabular-paper .tc-sig-block {
+  gap: calc(0.45 * var(--tc-mm));
+}
+
+.tc-tabular-paper .tc-sig-img {
+  height: calc(4.2 * var(--tc-mm));
+}

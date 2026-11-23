@@ -1,0 +1,29 @@
+/* Query the module window, rather than the whole monitor's width. */
+@container studio-window (max-width: 760px) {
+  .mod-studio-layout { grid-template-columns: minmax(0, 1fr); }
+  .mod-inspector-card.ps-inspector,
+  .mod-studio-layout.is-expanded .mod-inspector-card.ps-inspector { width: 100%; }
+  .mod-inspector-preview.ps-portrait-frame,
+  .mod-inspector-preview.ps-portrait-frame.is-expanded { width: min(100%, 260px); }
+}
+
+@container studio-window (max-width: 760px) {
+  .mod-header,
+  .mod-toolbar-strip,
+  .mod-btn-row {
+    flex-wrap: wrap;
+  }
+
+  .mod-header > *,
+  .mod-toolbar-strip > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .mod-btn-row { flex-shrink: 1; }
+}
+
+@container studio-window (max-width: 440px) {
+  .mod-action-btn,
+  .mod-secondary-btn { white-space: normal; text-align: left; }
+}

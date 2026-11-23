@@ -1,0 +1,41 @@
+@media (min-width: 1040px) and (min-height: 700px) {
+  #window-album-designer[data-window-maximized='true'] .os-window-content {
+    overflow: clip;
+    scrollbar-gutter: auto;
+  }
+
+  [data-window-maximized='true'] .mod-album-pane {
+    height: 100%;
+  }
+
+  [data-window-maximized='true'] .mod-album-workspace {
+    flex: 1 1 0;
+    grid-template-rows: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  [data-window-maximized='true'] .mod-album-workspace > .os-crossfade-cell,
+  [data-window-maximized='true'] .mod-album-workspace :is(.tc-workspace, .tc-stage-panel) {
+    height: 100%;
+    min-height: 0;
+  }
+
+  [data-window-maximized='true'] .tc-workspace {
+    grid-template-rows: minmax(0, 1fr);
+  }
+
+  [data-window-maximized='true'] .tc-rail {
+    max-height: 100%;
+  }
+
+  [data-window-maximized='true'] .mod-album-workspace .tc-paper-viewport {
+    flex: 1 1 0;
+    min-height: 0;
+    max-height: none;
+  }
+
+  [data-window-maximized='true'] .tc-paper-viewport {
+    container-type: size;
+    --tc-paper-fit-limit: min(100cqw, calc(100cqh * 210 / 297));
+  }
+}

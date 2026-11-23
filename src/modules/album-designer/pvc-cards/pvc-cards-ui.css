@@ -1,0 +1,298 @@
+@import './pvc-cards-layers.css';
+
+/* İZOLE MODÜL 03 · PRO PVC KİMLİK KARTI STÜDYOSU SOL/SAĞ DENETÇİ STİLİ (.css <= 350 satır) */
+/* Rahat okunabilir Apple Pro tipografi (13.5–15px) · Saf Siyah (#000000) & Açık Tema · Sıfır turuncu. */
+
+.pvc-studio-workspace {
+  grid-template-columns: clamp(266px, 32cqw, 332px) minmax(0, 1fr);
+}
+
+.pvc-studio-workspace.is-pro-editor {
+  grid-template-columns: clamp(252px, 27cqw, 298px) minmax(0, 1fr) clamp(252px, 27cqw, 292px);
+}
+
+@container studio-window (max-width: 1120px) {
+  .pvc-studio-workspace.is-pro-editor {
+    grid-template-columns: clamp(256px, 31cqw, 284px) minmax(0, 1fr);
+  }
+
+  .pvc-right-inspector {
+    grid-column: 1 / -1;
+    max-height: none;
+  }
+}
+
+@container studio-window (max-width: 760px) {
+
+  .pvc-studio-workspace,
+  .pvc-studio-workspace.is-pro-editor {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pvc-rail,
+.pvc-right-inspector {
+  gap: 11px;
+}
+
+.pvc-gallery-stack,
+.pvc-editor-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.pvc-drag-hint,
+.pvc-empty-custom-note {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--os-text-secondary);
+}
+
+.pvc-drag-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.pvc-drag-tile {
+  appearance: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 7px 9px;
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--os-text-primary) 5%, transparent);
+  color: var(--os-text-primary);
+  font-size: 13.2px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+  cursor: grab;
+  transition: background-color 140ms ease, transform 120ms ease;
+}
+
+.pvc-drag-tile:hover {
+  background: var(--os-accent-soft);
+}
+
+.pvc-drag-tile:active {
+  cursor: grabbing;
+  transform: scale(0.98);
+}
+
+.pvc-drag-grip {
+  font-size: 11px;
+  color: var(--os-text-secondary);
+  letter-spacing: -1px;
+  flex-shrink: 0;
+}
+
+.pvc-custom-card-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 10px 11px;
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--os-text-primary) 3.5%, transparent);
+}
+
+.pvc-custom-card-row.is-active {
+  background: var(--os-accent-soft);
+  box-shadow: inset 2px 0 0 var(--os-accent);
+}
+
+.pvc-custom-card-main {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  color: var(--os-text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.pvc-custom-card-main strong {
+  font-size: 14.5px;
+  font-weight: 650;
+  line-height: 1.28;
+  overflow-wrap: anywhere;
+}
+
+.pvc-custom-card-main small {
+  font-size: 12.8px;
+  color: var(--os-text-secondary);
+}
+
+.pvc-custom-card-tools,
+.pvc-inline-tools,
+.pvc-undo-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.pvc-mini-btn {
+  appearance: none;
+  border: none;
+  border-radius: 9px;
+  padding: 6px 10px;
+  font-size: 13.4px;
+  font-weight: 600;
+  line-height: 1.2;
+  background: color-mix(in srgb, var(--os-text-primary) 6.5%, transparent);
+  color: var(--os-text-primary);
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.pvc-mini-btn:hover {
+  background: color-mix(in srgb, var(--os-text-primary) 12%, transparent);
+}
+
+.pvc-mini-btn:disabled {
+  opacity: 0.38;
+  cursor: default;
+}
+
+.pvc-mini-btn.is-primary {
+  background: var(--os-btn-primary-bg);
+  color: var(--os-btn-primary-text);
+  font-weight: 650;
+}
+
+.pvc-mini-btn.is-primary:hover:not(:disabled) {
+  background: var(--os-btn-primary-bg);
+  opacity: 0.88;
+}
+
+.pvc-mini-btn.is-active {
+  background: var(--os-accent-soft);
+  color: var(--os-text-primary);
+  box-shadow: inset 0 0 0 1px var(--os-accent-border);
+}
+
+.pvc-mini-btn.is-active:hover:not(:disabled) {
+  background: var(--os-accent-soft);
+  opacity: 0.92;
+}
+
+.pvc-mini-btn.is-danger:hover {
+  background: rgba(220, 38, 38, 0.16);
+  color: #dc2626;
+}
+
+.pvc-shape-pills,
+.pvc-radius-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.pvc-prop-inspector,
+.pvc-prop-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pvc-mini-label {
+  font-size: 13.2px;
+  font-weight: 650;
+  color: var(--os-text-secondary);
+}
+
+.pvc-mm-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.pvc-mm-input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pvc-mm-input span {
+  font-size: 12.8px;
+  font-weight: 600;
+  color: var(--os-text-secondary);
+}
+
+.pvc-mm-input input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 34px;
+  padding: 0 9px;
+  border: 1px solid color-mix(in srgb, var(--os-text-primary) 14%, transparent);
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--os-text-primary) 3.5%, transparent);
+  color: var(--os-text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.pvc-align-btn-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.pvc-swatch-row {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.pvc-swatch-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 27px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--os-text-primary) 4.5%, transparent);
+  cursor: pointer;
+}
+
+.pvc-swatch-chip.is-active {
+  background: var(--os-accent-soft);
+  box-shadow: inset 0 0 0 1.5px var(--os-accent);
+}
+
+.pvc-swatch-chip span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(128, 128, 128, 0.38);
+}
+
+.pvc-range-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13.4px;
+  font-weight: 600;
+  color: var(--os-text-secondary);
+}
+
+.pvc-range-field input[type='range'] {
+  width: 100%;
+  accent-color: var(--os-accent);
+  cursor: pointer;
+}

@@ -1,0 +1,37 @@
+{
+  "identifier": "studio",
+  "description": "Local Studio data commands for the main window",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "allow-studio-load",
+    "allow-studio-commit",
+    "allow-studio-select-school",
+    "allow-studio-photo-preview",
+    "allow-studio-photo-original",
+    "allow-studio-generate-recovery-key",
+    "allow-studio-unlock-with-recovery-key",
+    "allow-studio-save-export",
+    "allow-studio-save-export-in-folder",
+    "allow-studio-open-export-folder",
+    "allow-studio-open-managed-dir",
+    "allow-studio-pick-photo-folder",
+    "allow-studio-list-printers",
+    "allow-studio-print-pages",
+    "allow-studio-load-personalization",
+    "allow-studio-save-personalization",
+    "allow-studio-save-desktop-asset",
+    "allow-studio-load-desktop-asset",
+    "allow-studio-delete-desktop-asset",
+    "allow-studio-license-status",
+    "allow-studio-license-activate",
+    "core:window:allow-minimize",
+    "core:window:allow-toggle-maximize",
+    "core:window:allow-is-maximized",
+    "core:window:allow-start-dragging",
+    "core:window:allow-close",
+    "core:event:allow-listen",
+    "core:event:allow-unlisten"
+  ]
+}

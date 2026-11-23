@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-installer-launch-app"
+description = "Enables the installer_launch_app command without any pre-configured scope."
+commands.allow = ["installer_launch_app"]
+
+[[permission]]
+identifier = "deny-installer-launch-app"
+description = "Denies the installer_launch_app command without any pre-configured scope."
+commands.deny = ["installer_launch_app"]

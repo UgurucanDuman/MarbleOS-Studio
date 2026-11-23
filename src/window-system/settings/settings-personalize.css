@@ -1,0 +1,304 @@
+/* ── MarbleOS Sistem El Kitabı: Duvar Kağıdı Galerisi, Widgetlar ve Şirket Formu (<= 350 Satır) ── */
+
+.os-book-hidden-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.os-book-wallpaper-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
+  gap: 8px;
+}
+
+.os-book-wallpaper-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 7px;
+  border: 1px solid var(--os-win-border);
+  border-radius: 10px;
+  background: var(--os-surface-subtle);
+  color: var(--os-text-secondary);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 0.14s ease, transform 0.12s ease;
+}
+
+.os-book-wallpaper-card:hover {
+  border-color: var(--os-text-muted);
+}
+
+.os-book-wallpaper-card.is-active {
+  border-color: var(--os-text-primary);
+  box-shadow: 0 0 0 1px var(--os-text-primary);
+}
+
+.os-book-wallpaper-swatch {
+  width: 100%;
+  height: 48px;
+  border-radius: 7px;
+  border: 1px solid var(--os-win-border);
+}
+
+.os-book-wallpaper-card strong {
+  font-size: 13px;
+  color: var(--os-text-primary);
+}
+
+.os-book-wallpaper-card small {
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--os-text-muted);
+}
+
+.os-book-custom-wallpapers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.os-book-custom-wp-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--os-chip-bg);
+  border: 1px solid var(--os-win-border);
+  overflow: hidden;
+}
+
+.os-book-custom-wp-chip.is-active {
+  border-color: var(--os-text-primary);
+}
+
+.os-book-custom-wp-select,
+.os-book-custom-wp-del {
+  border: none;
+  background: transparent;
+  color: var(--os-text-primary);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.os-book-custom-wp-select {
+  padding: 5px 8px 5px 10px;
+  font-weight: 600;
+}
+
+.os-book-custom-wp-del {
+  padding: 5px 8px;
+  color: var(--os-text-muted);
+}
+
+.os-book-custom-wp-del:hover {
+  color: var(--os-danger);
+}
+
+.os-book-widget-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.os-book-widget-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 11px;
+  border: 1px solid var(--os-win-border);
+  border-radius: 10px;
+  background: var(--os-surface-subtle);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 0.14s ease;
+}
+
+.os-book-widget-toggle.is-active {
+  border-color: var(--os-text-primary);
+}
+
+.os-book-widget-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.os-book-widget-copy strong {
+  font-size: 13.5px;
+  color: var(--os-text-primary);
+}
+
+.os-book-widget-copy small {
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--os-text-muted);
+}
+
+.os-book-switch-track {
+  position: relative;
+  flex-shrink: 0;
+  width: 34px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--os-chip-bg);
+  border: 1px solid var(--os-win-border);
+  transition: background 0.16s ease, border-color 0.16s ease;
+}
+
+.os-book-switch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--os-text-secondary);
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), background 0.16s ease;
+}
+
+.os-book-widget-toggle.is-active .os-book-switch-track {
+  background: var(--os-btn-primary-bg);
+  border-color: transparent;
+}
+
+.os-book-widget-toggle.is-active .os-book-switch-thumb {
+  transform: translateX(14px);
+  background: var(--os-btn-primary-text);
+}
+
+.os-book-company-preview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--os-surface-subtle);
+  border: 1px solid var(--os-win-border);
+}
+
+.os-book-company-preview-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.os-book-company-preview-title {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 16px;
+}
+
+.os-book-company-preview-title strong {
+  color: var(--os-text-primary);
+  font-weight: 800;
+}
+
+.os-book-company-preview-title span {
+  color: var(--os-text-secondary);
+  font-weight: 600;
+}
+
+.os-book-company-preview small {
+  font-size: 13px;
+  color: var(--os-text-muted);
+}
+
+.os-book-logo-uploader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--os-surface-subtle);
+  border: 1px solid var(--os-win-border);
+}
+
+.os-book-logo-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.os-book-logo-copy strong {
+  font-size: 14px;
+  color: var(--os-text-primary);
+}
+
+.os-book-logo-copy small {
+  font-size: 12.5px;
+  color: var(--os-text-muted);
+}
+
+.os-book-logo-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.os-book-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.os-book-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.os-book-field.is-full {
+  grid-column: 1 / -1;
+}
+
+.os-book-field span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--os-text-secondary);
+}
+
+.os-book-field input,
+.os-book-field textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid color-mix(in srgb, var(--os-text-primary) 9%, transparent);
+  border-radius: 9px;
+  background: var(--os-select-bg);
+  color: var(--os-text-primary);
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.os-book-field textarea {
+  resize: vertical;
+}
+
+.os-book-field input:focus,
+.os-book-field textarea:focus {
+  border-color: var(--os-accent-border);
+  box-shadow: 0 0 0 3px var(--os-accent-soft);
+}
+
+@media (max-width: 640px) {
+  .os-book-widget-grid,
+  .os-book-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

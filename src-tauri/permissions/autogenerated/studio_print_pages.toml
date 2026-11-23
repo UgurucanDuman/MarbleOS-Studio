@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-studio-print-pages"
+description = "Enables the studio_print_pages command without any pre-configured scope."
+commands.allow = ["studio_print_pages"]
+
+[[permission]]
+identifier = "deny-studio-print-pages"
+description = "Denies the studio_print_pages command without any pre-configured scope."
+commands.deny = ["studio_print_pages"]

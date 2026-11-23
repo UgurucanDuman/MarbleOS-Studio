@@ -1,0 +1,25 @@
+MarbleOS Studio 1.0 — Son Kullanıcı Lisans Sözleşmesi
+=====================================================
+
+1. Lisans Kapsamı
+Bu yazılım, kurulduğu tek bir Windows bilgisayarında okul fotoğrafçılığı
+(vesikalık, biyometrik, PVC kimlik kartı, sınıf çizelgesi, yıllık ve kütük
+baskısı) iş akışı için kullanılmak üzere lisanslanır.
+
+2. Tek Bilgisayar Kilidi ve Çevrimdışı Etkinleştirme
+Her ürün anahtarı yalnızca bir bilgisayar için geçerlidir. İlk açılışta
+oluşturulan Makine Kodu ile satıcıdan alınan Etkinleştirme Kodu bu
+bilgisayara kriptografik olarak (ECDSA P-256) bağlanır ve başka
+bilgisayarlarda çalışmaz.
+
+3. Yerel Veri ve Gizlilik
+Tüm okul, öğrenci, fotoğraf ve baskı kayıtları yalnızca bu bilgisayarda
+(%LOCALAPPDATA%\MarbleOS-Studio) saklanır. Yazılım otomatik olarak ağ
+üzerinden veri göndermez. Şifreli yedek parolalarının ve kurtarma
+anahtarının saklanması ile kişisel verilerin mevzuata uygun işlenmesi
+kullanıcının sorumluluğundadır.
+
+4. Kısıtlamalar
+Yazılımın lisans korumasının devre dışı bırakılması, ürün anahtarının
+veya etkinleştirme kodunun yetkisiz çoğaltılması ya da üçüncü kişilerle
+paylaşılması yasaktır.

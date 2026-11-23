@@ -1,0 +1,256 @@
+/* İZOLE SİSTEM KATMANI · KES-KATLA CEP DEFTERİ, DERS PROGRAMI & ÖZEL KAPAK STİLLERİ (.css <= 350 satır) */
+
+.tc-booklet-stack {
+  flex: 1;
+  display: grid;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tc-booklet-stack.strips-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.tc-booklet-stack.strips-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.tc-booklet-strip {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 2.6cqi minmax(0, 1fr);
+  align-items: stretch;
+  padding: 0.9cqi 0;
+  border-bottom: 1px dashed var(--tc-hairline, #52525b);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.tc-booklet-strip:last-child {
+  border-bottom: none;
+}
+
+.tc-spine-gutter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 1.02cqi;
+  font-weight: 600;
+  color: var(--tc-ink-sub, #27272a);
+  overflow: hidden;
+}
+
+.tc-mini-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tc-mini-page .tc-th-group-title {
+  font-size: 0.82cqi;
+  padding: 0.14cqi;
+}
+
+.tc-mini-page .tc-th-sub-cell {
+  font-size: 0.76cqi;
+  padding: 0.12cqi 0;
+}
+
+.tc-mini-page .tc-subtag-col.is-quad {
+  width: 1.9cqi;
+}
+
+.tc-mini-page .tc-subtag-col.is-quad .tc-subtag-cell {
+  font-size: 0.72cqi;
+}
+
+.tc-mini-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05cqi;
+  padding-top: 0.3cqi;
+  flex-shrink: 0;
+}
+
+/* MİMARİ KURUMSAL KAPAK & KULLANICI ÖZEL KAPAK (TAM VEYA ORTA GÖRSEL) */
+.tc-cover-half {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.85cqi;
+  padding: 1.4cqi;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  border: 1.2px solid color-mix(in srgb, var(--tc-border, #09090b) 36%, transparent);
+}
+
+.tc-cover-half.is-plain {
+  border: none;
+}
+
+.tc-cover-fullbleed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tc-cover-emblem {
+  max-width: 42%;
+  max-height: 30%;
+  object-fit: contain;
+  border-radius: 0.5cqi;
+}
+
+.tc-cover-school {
+  font-size: 1.7cqi;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.tc-cover-band {
+  width: 88%;
+  padding: 0.5cqi 0.9cqi;
+  background: var(--tc-accent, #1e3a8a);
+  color: #ffffff;
+  font-size: 1.35cqi;
+  font-weight: 700;
+}
+
+.tc-cover-title {
+  font-size: 1.52cqi;
+  font-weight: 750;
+}
+
+.tc-cover-line {
+  font-size: 1.2cqi;
+  color: var(--tc-ink-sub, #27272a);
+}
+
+/* HAFTALIK DERS PROGRAMI — SAF CSS GRID (ASLA TAŞMAZ) */
+.tc-sched-title {
+  font-size: 1.25cqi;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0.35cqi;
+  flex-shrink: 0;
+}
+
+.tc-sched-grid {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 2.2cqi 2.1cqi repeat(5, minmax(0, 1fr));
+  grid-template-rows: 1.3fr repeat(12, minmax(0, 1fr));
+  border-top: 1.2px solid var(--tc-border, #09090b);
+  border-left: 1.2px solid var(--tc-border, #09090b);
+  overflow: hidden;
+  font-size: 0.88cqi;
+}
+
+.tc-sched-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-right: 1px solid var(--tc-hairline, #52525b);
+  border-bottom: 1px solid var(--tc-hairline, #52525b);
+}
+
+.tc-sched-cell.is-head {
+  font-weight: 700;
+  background: var(--tc-head-tint, #f1f5f9);
+  border-bottom-color: var(--tc-border, #09090b);
+}
+
+.tc-sched-cell.is-period {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: 800;
+  font-size: 0.92cqi;
+  background: var(--tc-summary-tint, #f0f9ff);
+  border-right-color: var(--tc-border, #09090b);
+}
+
+.tc-sched-cell.is-divider {
+  border-bottom: 1.5px solid var(--tc-border, #09090b);
+}
+
+/* ÖĞRETMEN CEP ALBÜMÜ 4×3 PORTRE IZGARASI */
+.tc-pocket-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.25cqi;
+  font-weight: 800;
+  color: var(--tc-heading-ink, var(--tc-accent, #1b365d));
+  padding: 0 0.3cqi;
+  flex-shrink: 0;
+}
+
+.tc-pocket-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 0.65cqi;
+  padding: 0.5cqi 0.3cqi;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.tc-pocket-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25cqi;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.tc-pocket-photo {
+  flex: 1;
+  min-height: 0;
+  aspect-ratio: 3 / 4;
+  max-width: 100%;
+  border: 1px solid var(--tc-hairline, #52525b);
+  overflow: hidden;
+  background: #f4f4f5;
+}
+
+.tc-pocket-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tc-pocket-caption {
+  font-size: 0.88cqi;
+  font-weight: 700;
+  line-height: 1.08;
+  color: var(--tc-ink, #09090b);
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

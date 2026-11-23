@@ -1,0 +1,255 @@
+/* ── İZOLE MODÜL 04 SAĞ CANLI BASKI SAHNESİ ÇERÇEVESİ: Üst Çubuk, ZIP Görünümü ve Sayfa Şeridi (<= 350 Satır) ── */
+
+.pc-stage-shell {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 13px;
+  background: var(--os-card-bg);
+  border: 1px solid var(--os-card-border);
+  overflow: hidden;
+}
+
+.pc-stage-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--os-win-border);
+  background: var(--os-surface-subtle);
+}
+
+.pc-stage-meta strong {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--os-text-primary);
+}
+
+.pc-stage-meta small {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--os-text-muted);
+}
+
+.pc-stage-tools {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pc-crop-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 7px;
+  border: 1px solid var(--os-inspector-card-border);
+  background: var(--os-chip-bg);
+  color: var(--os-text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.pc-crop-toggle-btn.is-on {
+  border-color: rgba(129, 140, 248, 0.42);
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--os-text-primary);
+}
+
+.pc-page-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--os-text-secondary);
+}
+
+.pc-step-btn {
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 7px;
+  background: var(--os-chip-bg);
+  color: var(--os-text-primary);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.pc-step-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.pc-stage-viewport {
+  container-type: inline-size;
+  --tc-paper-fit-limit: min(56vh, 95cqi);
+  --tc-paper-landscape-fit-limit: min(88vh, 95cqi);
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 18px;
+  display: flex;
+  background: var(--os-surface-subtle);
+}
+
+.pc-zip-crossfade {
+  width: 100%;
+  align-self: flex-start;
+}
+
+.pc-sheet-stage {
+  margin: auto;
+  flex-shrink: 0;
+}
+
+.pc-empty-preview {
+  margin: auto;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 7px;
+  padding: 28px 16px;
+  color: var(--os-text-secondary);
+}
+
+.pc-empty-preview small {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--os-text-muted);
+}
+
+.pc-zip-preview {
+  width: 100%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pc-zip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  font-size: 13.5px;
+  color: var(--os-text-secondary);
+}
+
+.pc-zip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+
+.pc-zip-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  background: var(--os-card-bg);
+  border: 1px solid var(--os-card-border);
+}
+
+.pc-zip-thumb {
+  width: 32px;
+  height: 42px;
+  border-radius: 5px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--os-chip-bg);
+}
+
+.pc-zip-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pc-zip-item-text {
+  min-width: 0;
+}
+
+.pc-zip-item-text strong {
+  display: block;
+  font-size: 13.5px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pc-zip-item-text small,
+.pc-zip-more {
+  display: block;
+  font-size: 12.5px;
+  color: var(--os-text-muted);
+}
+
+.pc-filmstrip-shell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-top: 1px solid var(--os-win-border);
+  background: var(--os-surface-subtle);
+}
+
+.pc-filmstrip-shell > .pc-step-btn { flex-shrink: 0; }
+
+.pc-filmstrip {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.pc-filmstrip-items {
+  display: flex;
+  width: max-content;
+  gap: 6px;
+}
+
+.pc-filmstrip-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: 1px solid var(--os-inspector-card-border);
+  background: var(--os-chip-bg);
+  color: var(--os-text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pc-filmstrip-chip small {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--os-text-muted);
+}
+
+.pc-filmstrip-chip.is-active {
+  border-color: rgba(56, 189, 248, 0.45);
+  background: rgba(14, 165, 233, 0.12);
+  color: var(--os-text-primary);
+}

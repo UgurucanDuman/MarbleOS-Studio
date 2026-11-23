@@ -1,0 +1,299 @@
+/* ── İZOLE MODÜL 01 EK STİLİ: Okullar Görünümü, Tablo İkonları & Sonsuz Kaydırma (<= 350 Satır) ── */
+
+.xl-schools-view {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(276px, 29cqw, 332px);
+  gap: 12px;
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+}
+
+.xl-schools-main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.xl-schools-main > .xl-bar,
+.xl-schools-main .xl-actions {
+  flex-wrap: wrap;
+}
+
+.xl-search-wide {
+  flex: 1 1 180px;
+  min-width: 140px;
+  width: auto;
+}
+
+.xl-schools-summary {
+  font-size: 13.5px;
+  color: var(--os-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.xl-schools-summary strong {
+  color: var(--os-text-primary);
+  font-weight: 600;
+}
+
+.xl-school-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--os-win-border);
+  border-radius: 12px;
+  background: var(--os-table-glass-bg);
+  color: var(--os-table-text);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.xl-table-scroll {
+  position: relative;
+  max-height: 440px;
+  overflow-y: auto;
+  overflow-x: auto;
+  background: transparent;
+  overscroll-behavior: contain;
+  contain: paint;
+}
+
+.xl-school-row {
+  display: grid;
+  grid-template-columns: 36px 68px 112px minmax(132px, 1.4fr) minmax(114px, 1.05fr) minmax(124px, 1.05fr) 72px 84px 72px;
+  align-items: stretch;
+  width: 100%;
+  min-width: 814px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--os-table-grid);
+  background: transparent;
+  color: var(--os-table-text);
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.xl-school-row > * {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 7px 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-right: 1px solid color-mix(in srgb, var(--os-table-grid) 42%, transparent);
+  color: var(--os-table-text);
+}
+
+.xl-school-row > *:last-child {
+  border-right: none;
+}
+
+.xl-school-row:not(.xl-school-row-head):hover { background: var(--os-table-hover); }
+.xl-school-row:focus-visible { outline: 2px solid var(--os-table-text); outline-offset: -2px; }
+.xl-school-row.is-active { background: var(--os-table-hover); }
+.xl-school-row.is-checked { background: var(--os-accent-soft); }
+.xl-school-row.is-active .xl-school-name { font-weight: 700; }
+
+.xl-school-head-wrap {
+  overflow: hidden;
+  padding-right: 3px;
+  background: var(--os-table-head-bg);
+  border-bottom: 1px solid var(--os-table-grid);
+}
+
+.xl-school-row-head {
+  cursor: default;
+  background: transparent;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--os-table-text);
+}
+
+.xl-school-row > .xl-cell-check {
+  position: relative;
+  justify-content: center;
+  padding: 7px 4px;
+  overflow: visible;
+}
+
+/* Yuvarlak (daire) animasyonlu tablo seçicisi */
+.xl-row-check {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1.5px solid rgba(161, 161, 170, 0.55);
+  border-radius: 50%;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background-color 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.18s ease;
+}
+
+.xl-row-check:hover:not(:disabled) {
+  border-color: var(--os-check-bg);
+  box-shadow: 0 0 0 3px var(--os-accent-soft);
+}
+
+.xl-row-check:active:not(:disabled) {
+  transform: scale(0.84);
+}
+
+.xl-row-check:checked {
+  background-color: var(--os-check-bg);
+  border-color: var(--os-check-bg);
+  box-shadow: 0 0 0 3px var(--os-accent-soft);
+  animation: xlCheckPop 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 6.2l2 2 4-4.4' fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.xl-row-check:indeterminate {
+  background-color: var(--os-check-bg);
+  border-color: var(--os-check-bg);
+  box-shadow: 0 0 0 3px var(--os-accent-soft);
+  animation: xlCheckPop 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cline x1='3' y1='6' x2='9' y2='6' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.xl-row-check:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.xl-school-row > .xl-col-actions {
+  justify-content: center;
+  padding: 7px 6px;
+}
+
+.mod-table th.xl-th-actions,
+.mod-table td.xl-td-actions {
+  text-align: center;
+  width: 72px;
+}
+
+.mod-table th.xl-th-check,
+.mod-table td.xl-td-check {
+  width: 38px;
+  text-align: center;
+}
+
+.xl-row-actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.xl-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: rgba(161, 161, 170, 0.1);
+  cursor: pointer;
+  transition: background 0.14s ease, transform 0.12s ease;
+}
+
+.xl-icon-btn-edit {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+}
+
+.xl-icon-btn-edit:hover {
+  background: rgba(37, 99, 235, 0.2);
+}
+
+.xl-icon-btn-danger {
+  background: rgba(244, 63, 94, 0.1);
+  color: #e11d48;
+}
+
+.xl-icon-btn-danger:hover {
+  background: rgba(244, 63, 94, 0.2);
+}
+
+.xl-icon-btn-danger.is-confirming {
+  width: auto;
+  padding: 0 8px;
+  gap: 4px;
+  background: #e11d48;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.32);
+}
+
+.xl-table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 12px 6px;
+  background: var(--os-table-head-bg);
+  border-top: 1px solid var(--os-table-grid);
+  font-size: 13px;
+  color: var(--os-table-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.xl-table-footer strong {
+  color: var(--os-table-text);
+  font-weight: 600;
+}
+
+.xl-scroll-sentinel {
+  width: 1px;
+  height: 1px;
+}
+
+.xl-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13.5px;
+  color: var(--os-table-text);
+}
+
+.xl-school-name {
+  font-weight: 600;
+  color: var(--os-table-text);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.xl-cell-text {
+  color: var(--os-table-text);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.xl-num {
+  justify-content: flex-end;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.xl-school-logo-slot {
+  width: 58px;
+  height: 58px;
+  padding: 5px;
+}
+
+.xl-school-logo-slot.has-logo img {
+  object-fit: contain;
+}

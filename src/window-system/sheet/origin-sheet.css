@@ -1,0 +1,260 @@
+/* ── PENCERE FORM KARTI: Butondan açılıp butona dönen Apple tarzı sheet (<= 350 Satır) ── */
+
+.os-sheet-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+/* Dış arka planda blur veya siyah karartma kullanılmaz; yalnızca dış tıklama yakalanır. */
+.os-sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  cursor: default;
+}
+
+/* Konum, boyut ve köşe useSheetMorph tarafından canlandırılır; cam blur açılışın ilk anından itibaren canlıdır. */
+.os-sheet-panel {
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  background: var(--os-sheet-bg) !important;
+  border: 1px solid color-mix(in srgb, var(--os-text-primary) 12%, transparent);
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.54), inset 0 0.5px 0 rgba(255, 255, 255, 0.12);
+  box-sizing: border-box;
+  color: var(--os-table-text);
+  overflow: hidden;
+  contain: layout paint;
+  backdrop-filter: blur(36px) saturate(175%);
+  -webkit-backdrop-filter: blur(36px) saturate(175%);
+  transform: translate3d(0, 0, 0);
+}
+
+.os-sheet-panel[data-sheet-animating='true'] {
+  will-change: left, top, width, height;
+}
+
+/* Kapanışın son anında kart butona dönüşürken panel kenar çizgisi, gölgesi ve cam blur'u butondaki gibi kaybolur. */
+.os-sheet-panel[data-sheet-ghosting] {
+  border-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Butonun yazısı ve ikonu: kart küçülürken belli bir noktadan sonra belirerek butona dönüşür. */
+.os-sheet-ghost {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: inherit;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* İçerik kart genişliğiyle orantılı ölçeklenir (scale3d); sağ/sol kenarlardan kırpılmaz. */
+.os-sheet-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-radius: 16px;
+  transform-origin: 0 0;
+  will-change: transform, opacity;
+}
+
+.os-sheet-header {
+  flex-shrink: 0;
+  padding: 16px 22px 4px;
+}
+
+.os-sheet-header h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.os-sheet-header p {
+  margin: 3px 0 0;
+  padding-left: 21px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--os-text-secondary);
+}
+
+.os-sheet-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 22px 4px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  min-height: 0;
+}
+
+.os-sheet-body > * {
+  flex-shrink: 0;
+}
+
+
+.os-sheet-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.os-sheet-section h3 {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--os-text-muted);
+}
+
+.os-sheet-error {
+  margin: 8px 22px 0;
+  font-size: 14px;
+  color: #f43f5e;
+}
+
+.os-sheet-footer {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 22px 16px;
+}
+
+.os-sheet-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6.5px;
+  min-width: 84px;
+  padding: 7.5px 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--os-chip-bg);
+  color: var(--os-text-primary);
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.os-sheet-btn:hover:not(:disabled) { background: rgba(161, 161, 170, 0.2); }
+.os-sheet-btn:disabled { opacity: 0.45; cursor: default; }
+
+.os-sheet-btn-primary {
+  background: var(--os-btn-primary-bg);
+  color: var(--os-btn-primary-text);
+  font-weight: 650;
+}
+
+.os-sheet-btn-primary:hover:not(:disabled) {
+  background: var(--os-btn-primary-bg);
+  opacity: 0.88;
+}
+
+.os-sheet-btn:focus-visible,
+.os-switch:focus-visible {
+  outline: 2px solid var(--os-accent-border);
+  outline-offset: 2px;
+}
+
+.os-field-input:focus-visible {
+  outline: none;
+}
+
+/* ── Form alanları ── */
+.os-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.os-field label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5.5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--os-text-secondary);
+}
+
+.os-icon-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.os-label-icon {
+  flex-shrink: 0;
+}
+
+.os-field-required { color: var(--os-text-muted); }
+
+.os-field small {
+  font-size: 13px;
+  color: var(--os-text-muted);
+}
+
+.os-field-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 7.5px 10.5px;
+  border: 1px solid color-mix(in srgb, var(--os-text-primary) 9%, transparent);
+  border-radius: 9px;
+  background: var(--os-select-bg);
+  color: var(--os-text-primary);
+  font: inherit;
+  font-size: 14.5px;
+  outline: none;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+
+.os-field-input:hover:not(:focus) {
+  border-color: color-mix(in srgb, var(--os-text-primary) 16%, transparent);
+}
+
+.os-field-input:focus {
+  border-color: var(--os-accent-border);
+  box-shadow: 0 0 0 3px var(--os-accent-soft);
+}
+
+.os-field-input::placeholder { color: var(--os-text-muted); }
+
+.os-field-textarea {
+  resize: vertical;
+  min-height: 52px;
+  line-height: 1.45;
+}
+
+.os-field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@container studio-window (max-width: 480px) {
+  .os-field-row { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ── Açan buton: kart butondan çıkarken gizlenir, kart butona geri inince görünür ── */
+[data-sheet-trigger='hidden'] {
+  visibility: hidden;
+  pointer-events: none;
+}
+

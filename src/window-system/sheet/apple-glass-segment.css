@@ -1,0 +1,149 @@
+/* ── ORTAK PENCERE KONTROLÜ: Apple Liquid Glass Segmented Control (<= 130 Satır) ── */
+
+.xl-segment-shell {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  max-width: min(560px, 100%);
+}
+
+.xl-segment-shell.is-full {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+}
+
+.xl-segment-shell.is-fixed {
+  flex-shrink: 0;
+  max-width: none;
+}
+
+.xl-segment-shell.is-fixed > .xl-segment {
+  overflow: visible;
+}
+
+.xl-segment-shell > .xl-segment {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.xl-segment {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 3px;
+  min-width: 0;
+  min-height: 35px;
+  padding: 3.5px;
+  border: 1px solid color-mix(in srgb, var(--os-text-primary) 9%, transparent);
+  border-radius: 10px;
+  background: var(--os-segment-bg);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.xl-segment::-webkit-scrollbar {
+  display: none;
+}
+
+.xl-segment-items {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 3px;
+  min-width: 100%;
+}
+
+.xl-sheet-tabs {
+  display: flex;
+  width: 100%;
+}
+
+.xl-sheet-tabs .xl-segment-item {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+}
+
+.xl-segment-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  padding: 5.5px 14px;
+  border: none;
+  border-radius: 7.5px;
+  background: transparent;
+  color: var(--os-text-secondary);
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.xl-segment-item:hover {
+  color: var(--os-text-primary);
+}
+
+.xl-segment-item.is-active {
+  color: var(--os-table-text);
+  font-weight: 650;
+}
+
+.xl-glass-pill {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 7.5px;
+  background: var(--os-segment-pill-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), inset 0 0.5px 0 rgba(255, 255, 255, 0.16);
+}
+
+[data-theme='light'] .xl-glass-pill {
+  background: var(--os-segment-pill-bg);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+}
+
+.xl-segment-label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.xl-segment-nav-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 31px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: var(--os-chip-bg);
+  color: var(--os-text-primary);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.16s ease, transform 0.12s ease;
+}
+
+.xl-segment-nav-btn:hover:not(:disabled) { background: rgba(161, 161, 170, 0.24); }
+.xl-segment-nav-btn:active:not(:disabled) { transform: scale(0.95); }
+.xl-segment-nav-btn:disabled { opacity: 0.35; cursor: default; }
+
+.xl-muted { padding: 5px 10px; font-size: 14px; color: var(--os-text-muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  .xl-segment-item { transition: none; }
+}
+

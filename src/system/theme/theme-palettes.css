@@ -1,0 +1,323 @@
+@import './theme-palettes-light.css';
+
+/* ── MarbleOS Studio — Koyu 12 Renk ve Tema Paletleri + Cam Yüzeyler (<= 350 Satır, Sıfır Turuncu) ── */
+
+:root[data-palette='obsidian-black'] {
+  color-scheme: dark;
+  --os-bg-stage: #000000;
+  --os-topbar-bg: rgba(4, 4, 6, 0.82);
+  --os-win-bg: rgba(2, 2, 4, 0.72);
+  --os-win-content-bg: rgba(0, 0, 0, 0.28);
+  --os-win-titlebar-bg: rgba(6, 6, 9, 0.56);
+  --os-win-border: rgba(255, 255, 255, 0.09);
+  --os-win-active-border: rgba(255, 255, 255, 0.16);
+  --os-sheet-bg: rgba(6, 6, 9, 0.68);
+  --os-sheet-backdrop: transparent;
+  --os-popover-bg: rgba(12, 12, 16, 0.74);
+  --os-card-bg: rgba(255, 255, 255, 0.036);
+  --os-card-border: rgba(255, 255, 255, 0.055);
+  --os-surface-subtle: rgba(255, 255, 255, 0.028);
+  --os-chip-bg: rgba(255, 255, 255, 0.065);
+  --os-segment-bg: rgba(255, 255, 255, 0.04);
+  --os-segment-pill-bg: rgba(255, 255, 255, 0.12);
+  --os-select-bg: rgba(255, 255, 255, 0.045);
+  --os-inspector-card-border: rgba(255, 255, 255, 0.055);
+  --os-inspector-btn-bg: rgba(255, 255, 255, 0.07);
+  --os-inspector-btn-border: rgba(255, 255, 255, 0.065);
+  --os-inspector-btn-hover: rgba(255, 255, 255, 0.12);
+  --os-line: rgba(255, 255, 255, 0.085);
+  --os-btn-primary-bg: #f4f4f5;
+  --os-btn-primary-text: #050507;
+  --os-table-bg: #000000;
+  --os-table-sticky-bg: rgba(6, 6, 9, 0.68);
+  --os-table-grid: rgba(255, 255, 255, 0.09);
+  --os-table-hover: rgba(255, 255, 255, 0.045);
+  --os-accent: #e4e4e7;
+  --os-accent-soft: rgba(228, 228, 231, 0.14);
+  --os-accent-border: rgba(228, 228, 231, 0.44);
+  --os-check-bg: #0ea5e9;
+  --os-dock-bg: rgba(4, 4, 6, 0.86);
+  --os-tooltip-bg: rgba(8, 8, 12, 0.92);
+  --os-scrollbar-thumb: rgba(228, 228, 231, 0.28);
+}
+
+:root[data-palette='sapphire-night'] {
+  color-scheme: dark;
+  --os-bg-stage: #071020;
+  --os-topbar-bg: rgba(9, 19, 38, 0.82);
+  --os-win-bg: rgba(10, 21, 43, 0.72);
+  --os-win-content-bg: rgba(7, 16, 32, 0.24);
+  --os-win-titlebar-bg: rgba(13, 27, 54, 0.52);
+  --os-win-border: rgba(96, 165, 250, 0.14);
+  --os-win-active-border: rgba(96, 165, 250, 0.32);
+  --os-sheet-bg: rgba(10, 20, 41, 0.68);
+  --os-sheet-backdrop: transparent;
+  --os-popover-bg: rgba(12, 24, 48, 0.74);
+  --os-card-bg: rgba(59, 130, 246, 0.06);
+  --os-card-border: rgba(96, 165, 250, 0.1);
+  --os-surface-subtle: rgba(59, 130, 246, 0.045);
+  --os-chip-bg: rgba(96, 165, 250, 0.12);
+  --os-segment-bg: rgba(15, 32, 64, 0.36);
+  --os-segment-pill-bg: rgba(59, 130, 246, 0.24);
+  --os-select-bg: rgba(15, 32, 64, 0.36);
+  --os-inspector-card-border: rgba(96, 165, 250, 0.1);
+  --os-inspector-btn-bg: rgba(96, 165, 250, 0.12);
+  --os-inspector-btn-border: rgba(96, 165, 250, 0.12);
+  --os-inspector-btn-hover: rgba(96, 165, 250, 0.2);
+  --os-line: rgba(96, 165, 250, 0.14);
+  --os-btn-primary-bg: #3b82f6;
+  --os-btn-primary-text: #ffffff;
+  --os-table-bg: #0a1428;
+  --os-table-grid: rgba(96, 165, 250, 0.14);
+  --os-table-hover: rgba(59, 130, 246, 0.08);
+  --os-accent: #3b82f6;
+  --os-accent-soft: rgba(59, 130, 246, 0.16);
+  --os-accent-border: rgba(96, 165, 250, 0.48);
+  --os-check-bg: #3b82f6;
+  --os-dock-bg: rgba(9, 19, 38, 0.86);
+  --os-tooltip-bg: rgba(12, 24, 48, 0.92);
+  --os-scrollbar-thumb: rgba(96, 165, 250, 0.34);
+}
+
+:root[data-palette='emerald-studio'] {
+  color-scheme: dark;
+  --os-bg-stage: #051510;
+  --os-topbar-bg: rgba(7, 25, 20, 0.82);
+  --os-win-bg: rgba(8, 28, 22, 0.72);
+  --os-win-content-bg: rgba(5, 21, 16, 0.24);
+  --os-win-titlebar-bg: rgba(10, 35, 28, 0.52);
+  --os-win-border: rgba(52, 211, 153, 0.14);
+  --os-win-active-border: rgba(52, 211, 153, 0.32);
+  --os-sheet-bg: rgba(8, 27, 21, 0.68);
+  --os-sheet-backdrop: transparent;
+  --os-popover-bg: rgba(9, 32, 25, 0.74);
+  --os-card-bg: rgba(16, 185, 129, 0.06);
+  --os-card-border: rgba(52, 211, 153, 0.1);
+  --os-surface-subtle: rgba(16, 185, 129, 0.045);
+  --os-chip-bg: rgba(52, 211, 153, 0.12);
+  --os-segment-bg: rgba(10, 36, 28, 0.36);
+  --os-segment-pill-bg: rgba(16, 185, 129, 0.24);
+  --os-select-bg: rgba(10, 36, 28, 0.36);
+  --os-inspector-card-border: rgba(52, 211, 153, 0.1);
+  --os-inspector-btn-bg: rgba(52, 211, 153, 0.12);
+  --os-inspector-btn-border: rgba(52, 211, 153, 0.12);
+  --os-inspector-btn-hover: rgba(52, 211, 153, 0.2);
+  --os-line: rgba(52, 211, 153, 0.14);
+  --os-btn-primary-bg: #10b981;
+  --os-btn-primary-text: #04221a;
+  --os-table-bg: #071b15;
+  --os-table-grid: rgba(52, 211, 153, 0.14);
+  --os-table-hover: rgba(16, 185, 129, 0.08);
+  --os-accent: #10b981;
+  --os-accent-soft: rgba(16, 185, 129, 0.16);
+  --os-accent-border: rgba(52, 211, 153, 0.48);
+  --os-check-bg: #059669;
+  --os-dock-bg: rgba(7, 25, 20, 0.86);
+  --os-tooltip-bg: rgba(9, 32, 25, 0.92);
+  --os-scrollbar-thumb: rgba(52, 211, 153, 0.34);
+}
+
+:root[data-palette='amethyst-velvet'] {
+  color-scheme: dark;
+  --os-bg-stage: #0f091c;
+  --os-topbar-bg: rgba(20, 12, 36, 0.82);
+  --os-win-bg: rgba(22, 14, 40, 0.72);
+  --os-win-content-bg: rgba(15, 9, 28, 0.24);
+  --os-win-titlebar-bg: rgba(28, 18, 50, 0.52);
+  --os-win-border: rgba(192, 132, 252, 0.15);
+  --os-win-active-border: rgba(192, 132, 252, 0.34);
+  --os-sheet-bg: rgba(20, 12, 37, 0.68);
+  --os-sheet-backdrop: transparent;
+  --os-popover-bg: rgba(24, 15, 44, 0.74);
+  --os-card-bg: rgba(168, 85, 247, 0.065);
+  --os-card-border: rgba(192, 132, 252, 0.1);
+  --os-surface-subtle: rgba(168, 85, 247, 0.045);
+  --os-chip-bg: rgba(192, 132, 252, 0.12);
+  --os-segment-bg: rgba(30, 18, 56, 0.36);
+  --os-segment-pill-bg: rgba(168, 85, 247, 0.26);
+  --os-select-bg: rgba(30, 18, 56, 0.36);
+  --os-inspector-card-border: rgba(192, 132, 252, 0.1);
+  --os-inspector-btn-bg: rgba(192, 132, 252, 0.12);
+  --os-inspector-btn-border: rgba(192, 132, 252, 0.12);
+  --os-inspector-btn-hover: rgba(192, 132, 252, 0.2);
+  --os-line: rgba(192, 132, 252, 0.14);
+  --os-btn-primary-bg: #a855f7;
+  --os-btn-primary-text: #ffffff;
+  --os-table-bg: #130c24;
+  --os-table-grid: rgba(192, 132, 252, 0.15);
+  --os-table-hover: rgba(168, 85, 247, 0.09);
+  --os-accent: #a855f7;
+  --os-accent-soft: rgba(168, 85, 247, 0.17);
+  --os-accent-border: rgba(192, 132, 252, 0.52);
+  --os-check-bg: #9333ea;
+  --os-dock-bg: rgba(20, 12, 36, 0.86);
+  --os-tooltip-bg: rgba(24, 15, 44, 0.92);
+  --os-scrollbar-thumb: rgba(192, 132, 252, 0.34);
+}
+
+:root[data-palette='ocean-lagoon'] {
+  color-scheme: dark;
+  --os-bg-stage: #05141b;
+  --os-topbar-bg: rgba(7, 25, 34, 0.82);
+  --os-win-bg: rgba(8, 28, 38, 0.72);
+  --os-win-content-bg: rgba(5, 20, 27, 0.24);
+  --os-win-titlebar-bg: rgba(11, 35, 47, 0.52);
+  --os-win-border: rgba(34, 211, 238, 0.14);
+  --os-win-active-border: rgba(34, 211, 238, 0.32);
+  --os-sheet-bg: rgba(8, 27, 36, 0.68);
+  --os-sheet-backdrop: transparent;
+  --os-popover-bg: rgba(9, 32, 43, 0.74);
+  --os-card-bg: rgba(6, 182, 212, 0.06);
+  --os-card-border: rgba(34, 211, 238, 0.1);
+  --os-surface-subtle: rgba(6, 182, 212, 0.045);
+  --os-chip-bg: rgba(34, 211, 238, 0.12);
+  --os-segment-bg: rgba(10, 34, 46, 0.36);
+  --os-segment-pill-bg: rgba(6, 182, 212, 0.24);
+  --os-select-bg: rgba(10, 34, 46, 0.36);
+  --os-inspector-card-border: rgba(34, 211, 238, 0.1);
+  --os-inspector-btn-bg: rgba(34, 211, 238, 0.12);
+  --os-inspector-btn-border: rgba(34, 211, 238, 0.12);
+  --os-inspector-btn-hover: rgba(34, 211, 238, 0.2);
+  --os-line: rgba(34, 211, 238, 0.14);
+  --os-btn-primary-bg: #06b6d4;
+  --os-btn-primary-text: #041d24;
+  --os-table-bg: #071a23;
+  --os-table-grid: rgba(34, 211, 238, 0.14);
+  --os-table-hover: rgba(6, 182, 212, 0.08);
+  --os-accent: #06b6d4;
+  --os-accent-soft: rgba(6, 182, 212, 0.16);
+  --os-accent-border: rgba(34, 211, 238, 0.48);
+  --os-check-bg: #0891b2;
+  --os-dock-bg: rgba(7, 25, 34, 0.86);
+  --os-tooltip-bg: rgba(9, 32, 43, 0.92);
+  --os-scrollbar-thumb: rgba(34, 211, 238, 0.34);
+}
+
+:root[data-palette='crimson-velvet'] {
+  color-scheme: dark;
+  --os-bg-stage: #16070d;
+  --os-topbar-bg: rgba(30, 10, 18, 0.82);
+  --os-win-bg: rgba(33, 12, 20, 0.72);
+  --os-win-content-bg: rgba(22, 7, 13, 0.24);
+  --os-win-titlebar-bg: rgba(42, 15, 26, 0.52);
+  --os-win-border: rgba(251, 113, 133, 0.15);
+  --os-win-active-border: rgba(251, 113, 133, 0.34);
+  --os-sheet-bg: rgba(29, 10, 18, 0.68);
+  --os-sheet-backdrop: transparent;
+  --os-popover-bg: rgba(36, 13, 22, 0.74);
+  --os-card-bg: rgba(244, 63, 94, 0.065);
+  --os-card-border: rgba(251, 113, 133, 0.1);
+  --os-surface-subtle: rgba(244, 63, 94, 0.045);
+  --os-chip-bg: rgba(251, 113, 133, 0.12);
+  --os-segment-bg: rgba(44, 15, 27, 0.36);
+  --os-segment-pill-bg: rgba(244, 63, 94, 0.26);
+  --os-select-bg: rgba(44, 15, 27, 0.36);
+  --os-inspector-card-border: rgba(251, 113, 133, 0.1);
+  --os-inspector-btn-bg: rgba(251, 113, 133, 0.12);
+  --os-inspector-btn-border: rgba(251, 113, 133, 0.12);
+  --os-inspector-btn-hover: rgba(251, 113, 133, 0.2);
+  --os-line: rgba(251, 113, 133, 0.14);
+  --os-btn-primary-bg: #f43f5e;
+  --os-btn-primary-text: #ffffff;
+  --os-table-bg: #190910;
+  --os-table-grid: rgba(251, 113, 133, 0.15);
+  --os-table-hover: rgba(244, 63, 94, 0.085);
+  --os-accent: #f43f5e;
+  --os-accent-soft: rgba(244, 63, 94, 0.16);
+  --os-accent-border: rgba(251, 113, 133, 0.5);
+  --os-check-bg: #e11d48;
+  --os-dock-bg: rgba(30, 10, 18, 0.86);
+  --os-tooltip-bg: rgba(36, 13, 22, 0.92);
+  --os-scrollbar-thumb: rgba(251, 113, 133, 0.34);
+}
+
+:root[data-palette='indigo-cosmos'] {
+  color-scheme: dark;
+  --os-bg-stage: #090c1f;
+  --os-topbar-bg: rgba(14, 18, 42, 0.82);
+  --os-win-bg: rgba(16, 20, 46, 0.72);
+  --os-win-content-bg: rgba(9, 12, 31, 0.24);
+  --os-win-titlebar-bg: rgba(20, 25, 58, 0.52);
+  --os-win-border: rgba(129, 140, 248, 0.15);
+  --os-win-active-border: rgba(129, 140, 248, 0.34);
+  --os-sheet-bg: rgba(14, 18, 41, 0.68);
+  --os-sheet-backdrop: transparent;
+  --os-popover-bg: rgba(18, 22, 50, 0.74);
+  --os-card-bg: rgba(99, 102, 241, 0.065);
+  --os-card-border: rgba(129, 140, 248, 0.1);
+  --os-surface-subtle: rgba(99, 102, 241, 0.045);
+  --os-chip-bg: rgba(129, 140, 248, 0.12);
+  --os-segment-bg: rgba(22, 28, 66, 0.36);
+  --os-segment-pill-bg: rgba(99, 102, 241, 0.26);
+  --os-select-bg: rgba(22, 28, 66, 0.36);
+  --os-inspector-card-border: rgba(129, 140, 248, 0.1);
+  --os-inspector-btn-bg: rgba(129, 140, 248, 0.12);
+  --os-inspector-btn-border: rgba(129, 140, 248, 0.12);
+  --os-inspector-btn-hover: rgba(129, 140, 248, 0.2);
+  --os-line: rgba(129, 140, 248, 0.14);
+  --os-btn-primary-bg: #6366f1;
+  --os-btn-primary-text: #ffffff;
+  --os-table-bg: #0d112b;
+  --os-table-grid: rgba(129, 140, 248, 0.15);
+  --os-table-hover: rgba(99, 102, 241, 0.09);
+  --os-accent: #6366f1;
+  --os-accent-soft: rgba(99, 102, 241, 0.17);
+  --os-accent-border: rgba(129, 140, 248, 0.5);
+  --os-check-bg: #4f46e5;
+  --os-dock-bg: rgba(14, 18, 42, 0.86);
+  --os-tooltip-bg: rgba(18, 22, 50, 0.92);
+  --os-scrollbar-thumb: rgba(129, 140, 248, 0.34);
+}
+
+:root[data-palette='aurora-prism'] {
+  color-scheme: dark;
+  --os-bg-stage: #070b16;
+  --os-topbar-bg: rgba(11, 17, 34, 0.82);
+  --os-win-bg: rgba(13, 19, 37, 0.72);
+  --os-win-content-bg: rgba(7, 11, 22, 0.22);
+  --os-win-titlebar-bg: rgba(17, 25, 48, 0.52);
+  --os-win-border: rgba(56, 189, 248, 0.16);
+  --os-win-active-border: rgba(168, 85, 247, 0.36);
+  --os-sheet-bg: rgba(11, 17, 34, 0.68);
+  --os-sheet-backdrop: transparent;
+  --os-popover-bg: rgba(15, 22, 44, 0.74);
+  --os-card-bg: rgba(56, 189, 248, 0.06);
+  --os-card-border: rgba(56, 189, 248, 0.1);
+  --os-surface-subtle: rgba(56, 189, 248, 0.045);
+  --os-chip-bg: rgba(56, 189, 248, 0.12);
+  --os-segment-bg: rgba(16, 26, 48, 0.36);
+  --os-segment-pill-bg: rgba(56, 189, 248, 0.22);
+  --os-select-bg: rgba(16, 26, 48, 0.36);
+  --os-inspector-card-border: rgba(56, 189, 248, 0.1);
+  --os-inspector-btn-bg: rgba(56, 189, 248, 0.12);
+  --os-inspector-btn-border: rgba(56, 189, 248, 0.12);
+  --os-inspector-btn-hover: rgba(56, 189, 248, 0.2);
+  --os-line: rgba(56, 189, 248, 0.15);
+  --os-btn-primary-bg: #06b6d4;
+  --os-btn-primary-text: #ffffff;
+  --os-table-bg: #0a1020;
+  --os-table-grid: rgba(56, 189, 248, 0.15);
+  --os-table-hover: rgba(56, 189, 248, 0.085);
+  --os-accent: #38bdf8;
+  --os-accent-soft: rgba(56, 189, 248, 0.16);
+  --os-accent-border: rgba(168, 85, 247, 0.48);
+  --os-check-bg: #6366f1;
+  --os-dock-bg: rgba(11, 17, 34, 0.86);
+  --os-tooltip-bg: rgba(15, 22, 44, 0.92);
+  --os-scrollbar-thumb: rgba(56, 189, 248, 0.34);
+}
+
+:root[data-palette='aurora-prism'] :is(.os-sheet-btn-primary, .xl-btn-primary, .mod-action-btn, .os-book-action-btn.is-primary, .xl-quick-submit, .xl-capsule-submit, .pvc-mini-btn.is-primary) {
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 52%, #a855f7 100%);
+  color: #ffffff;
+}
+
+:root[data-palette='aurora-prism'] :is(.xl-glass-pill, .os-book-volume-pill, .os-book-bookmark) {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.22) 0%, rgba(59, 130, 246, 0.22) 50%, rgba(168, 85, 247, 0.24) 100%);
+  box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.28);
+}
+
+:root[data-palette='aurora-prism'] :is(.os-topbar, .os-dock-glass) {
+  border-color: rgba(56, 189, 248, 0.28);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55), 0 0 24px rgba(168, 85, 247, 0.18);
+}

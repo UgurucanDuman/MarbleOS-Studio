@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-studio-load-personalization"
+description = "Enables the studio_load_personalization command without any pre-configured scope."
+commands.allow = ["studio_load_personalization"]
+
+[[permission]]
+identifier = "deny-studio-load-personalization"
+description = "Denies the studio_load_personalization command without any pre-configured scope."
+commands.deny = ["studio_load_personalization"]

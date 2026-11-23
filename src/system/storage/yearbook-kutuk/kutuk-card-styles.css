@@ -1,0 +1,231 @@
+/* İZOLE SİSTEM KATMANI · APPLE PRO TEK ÇERÇEVELİ KÜTÜK KARTI & SABİT YÜKSEKLİKLİ İSİM KUTUSU (.css <= 350 satır) */
+
+.kt-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border: var(--tc-line-thin) solid color-mix(in srgb, var(--kt-frame-color, #1b365d) 30%, #cbd5e1);
+  border-radius: calc(var(--kt-radius-mm, 1.4) * var(--tc-mm));
+}
+
+.kt-photo-wrap {
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  overflow: hidden;
+  background: #f4f4f5;
+}
+
+/* Tek çerçeve standardı: kartın içinde ikinci bir koyu çerçeve kesinlikle çizilmez */
+.kt-photo-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: none;
+  border-radius: 0;
+  background: #f4f4f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kt-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 18%;
+  display: block;
+}
+
+.kt-photo-missing {
+  font-size: calc(1.65 * var(--tc-mm, 4.95px));
+  font-weight: 600;
+  color: #71717a;
+  text-align: center;
+  padding: calc(0.55 * var(--tc-mm, 4.95px));
+}
+
+/* Tüm öğrencilerde eşit kilitli isim kutusu: uzun isimler fotoğraf yüksekliğini asla oynatmaz */
+.kt-caption {
+  flex: 0 0 calc(var(--kt-cap-mm, 5.8) * var(--tc-mm));
+  height: calc(var(--kt-cap-mm, 5.8) * var(--tc-mm));
+  padding: calc(0.24 * var(--tc-mm)) calc(0.42 * var(--tc-mm));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: calc(0.12 * var(--tc-mm));
+  line-height: 1.07;
+  overflow: hidden;
+}
+
+.kt-stu-num {
+  font-size: calc(var(--kt-num-mm, 1.75) * var(--tc-mm));
+  font-weight: 800;
+  color: var(--kt-frame-color, var(--tc-heading-ink, #1b365d));
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.015em;
+  line-height: 1.04;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kt-stu-name {
+  font-size: calc(var(--kt-name-mm, 1.9) * var(--tc-mm));
+  font-weight: 700;
+  color: var(--tc-ink, #09090b);
+  line-height: 1.06;
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
+  text-transform: uppercase;
+}
+
+/* 1. APPLE KUTU: Tek yumuşak dış çerçeve, tam kenar portre, bütünleşik zarif isim bandı */
+.kt-card.is-box-apple-soft {
+  border-radius: calc(var(--kt-radius-mm, 1.45) * var(--tc-mm));
+  border: var(--tc-line-thin) solid color-mix(in srgb, var(--kt-frame-color, #1b365d) 34%, #cbd5e1);
+  background: #ffffff;
+}
+
+.kt-card.is-box-apple-soft .kt-caption {
+  background: color-mix(in srgb, var(--kt-frame-color, #1b365d) 8.5%, #f8fafc);
+  border-top: var(--tc-line-thin) solid color-mix(in srgb, var(--kt-frame-color, #1b365d) 18%, transparent);
+}
+
+.kt-card.is-box-apple-soft .kt-stu-num {
+  color: var(--kt-frame-color, var(--tc-heading-ink, #1b365d));
+}
+
+/* 2. RENKLİ BANT: İç çerçevesiz tam kenar portre + tek parça renkli alt isim şeridi */
+.kt-card.is-box-filled-band {
+  border-radius: calc(var(--kt-radius-mm, 1.45) * var(--tc-mm));
+  border: var(--tc-line-thin) solid var(--kt-frame-color, #1b365d);
+  background: #ffffff;
+}
+
+.kt-card.is-box-filled-band .kt-caption {
+  background: var(--kt-frame-color, #1b365d);
+  border-top: none;
+}
+
+.kt-card.is-box-filled-band .kt-stu-num {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.kt-card.is-box-filled-band .kt-stu-name {
+  color: #ffffff;
+}
+
+/* 3. KLASİK KÜTÜK: Keskin tek çizgili resmi hücre, iç çerçevesiz tam portre */
+.kt-card.is-box-classic-grid {
+  border-radius: 0;
+  border: var(--tc-line-thin) solid var(--kt-frame-color, #1b365d);
+  background: #ffffff;
+}
+
+.kt-card.is-box-classic-grid .kt-caption {
+  background: color-mix(in srgb, var(--kt-frame-color, #1b365d) 8%, #ffffff);
+  border-top: var(--tc-line-thin) solid color-mix(in srgb, var(--kt-frame-color, #1b365d) 36%, #cbd5e1);
+}
+
+.kt-card.is-box-classic-grid .kt-stu-num {
+  color: var(--kt-frame-color, var(--tc-heading-ink, #1b365d));
+}
+
+/* 4. SAF MİNİMAL: Dış kutusuz ferah portre + tam aynı genişlikte uyumlu isim kutusu */
+.kt-card.is-box-minimal-clean {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+  gap: calc(0.55 * var(--tc-mm));
+}
+
+.kt-card.is-box-minimal-clean .kt-photo-wrap {
+  background: transparent;
+}
+
+.kt-card.is-box-minimal-clean .kt-photo-box {
+  border-radius: calc(var(--kt-radius-mm, 1.35) * var(--tc-mm));
+  border: var(--tc-line-thin) solid color-mix(in srgb, var(--kt-frame-color, #1b365d) 44%, #cbd5e1);
+}
+
+.kt-card.is-box-minimal-clean .kt-caption {
+  border-radius: calc(var(--kt-radius-mm, 1.35) * var(--tc-mm));
+  background: color-mix(in srgb, var(--kt-frame-color, #2563eb) 11%, #ffffff);
+  border: var(--tc-line-thin) solid color-mix(in srgb, var(--kt-frame-color, #1e3a5f) 46%, #cbd5e1);
+  padding: calc(0.2 * var(--tc-mm)) calc(0.36 * var(--tc-mm));
+}
+
+.kt-card.is-box-minimal-clean .kt-stu-name {
+  -webkit-line-clamp: 3;
+  font-weight: 800;
+  line-height: 1.07;
+  letter-spacing: -0.015em;
+}
+
+/* 5. FOTOĞRAF ÇERÇEVESİ KESİMİ (Tek çerçeve mimarisini korur, içe ikinci çerçeve koymaz) */
+.kt-card.is-frame-sharp {
+  border-radius: 0;
+}
+
+.kt-card.is-box-minimal-clean.is-frame-sharp .kt-photo-box,
+.kt-card.is-box-minimal-clean.is-frame-sharp .kt-caption {
+  border-radius: 0;
+}
+
+.kt-card.is-frame-frameless:not(.is-box-minimal-clean) {
+  border: none;
+  box-shadow: 0 calc(0.24 * var(--tc-mm)) calc(0.85 * var(--tc-mm)) rgba(15, 23, 42, 0.12);
+}
+
+.kt-card.is-box-minimal-clean.is-frame-frameless .kt-photo-box {
+  border: none;
+  box-shadow: 0 calc(0.22 * var(--tc-mm)) calc(0.75 * var(--tc-mm)) rgba(15, 23, 42, 0.12);
+}
+
+.kt-card.is-box-minimal-clean.is-frame-frameless .kt-caption {
+  border-color: transparent;
+}
+
+/* Paspartulu: Galeri tarzı beyaz kenar boşluğu — içte ekstra koyu çizgi çizmeden zarif derinlik */
+.kt-card.is-frame-double-frame:not(.is-box-minimal-clean) .kt-photo-wrap {
+  padding: calc(0.68 * var(--tc-mm)) calc(0.68 * var(--tc-mm)) calc(0.5 * var(--tc-mm));
+  background: #ffffff;
+}
+
+.kt-card.is-frame-double-frame:not(.is-box-minimal-clean) .kt-photo-box {
+  border: none;
+  border-radius: calc(max(0.4, var(--kt-radius-mm, 1.4) - 0.55) * var(--tc-mm));
+}
+
+.kt-card.is-box-classic-grid.is-frame-double-frame .kt-photo-box {
+  border-radius: 0;
+}
+
+.kt-card.is-box-minimal-clean.is-frame-double-frame .kt-photo-box {
+  padding: calc(0.52 * var(--tc-mm));
+  background: #ffffff;
+}
+
+.kt-card.is-box-minimal-clean.is-frame-double-frame .kt-photo-box img {
+  border-radius: calc(max(0.35, var(--kt-radius-mm, 1.35) - 0.55) * var(--tc-mm));
+}

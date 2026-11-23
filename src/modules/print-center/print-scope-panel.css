@@ -1,0 +1,100 @@
+/* ── İZOLE MODÜL 04 KAPSAM & ŞUBE HAZIRLIK PANELİ STİLİ (<= 350 Satır) ── */
+
+.pc-readiness-meter {
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(161, 161, 170, 0.16);
+  overflow: hidden;
+}
+
+.pc-readiness-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--os-accent);
+  transition: width 0.2s ease;
+}
+
+.pc-readiness-fill.is-complete {
+  background: #10b981;
+}
+
+.pc-branch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 176px;
+  overflow-y: auto;
+}
+
+.pc-branch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 9px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: var(--os-surface-subtle);
+  color: var(--os-text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.14s ease, border-color 0.14s ease;
+}
+
+.pc-branch-row:hover {
+  background: var(--os-inspector-btn-bg);
+}
+
+.pc-branch-row.is-selected {
+  background: var(--os-accent-soft);
+  border-color: var(--os-accent-border);
+}
+
+.pc-branch-main strong {
+  display: block;
+  font-size: 13.5px;
+}
+
+.pc-branch-main small {
+  display: block;
+  font-size: 12.5px;
+  color: var(--os-text-muted);
+}
+
+.pc-branch-status {
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.pc-branch-status.is-complete {
+  color: #10b981;
+}
+
+.pc-branch-status.is-pending {
+  color: var(--os-accent);
+}
+
+.pc-branch-status.is-empty {
+  color: var(--os-text-muted);
+}
+
+.pc-missing-note {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--os-surface-subtle);
+}
+
+.pc-missing-note strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.pc-missing-note p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--os-text-secondary);
+}
